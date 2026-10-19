@@ -473,33 +473,51 @@ export default function HomePage() {
       </section>
 
       {/* Help + quote */}
-      <section id="quote" className="scroll-mt-24 bg-navy text-foam">
-        <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-14 md:grid-cols-12 md:px-6 md:py-16">
-          <div className="md:col-span-5">
-            <h2 className="text-3xl font-bold tracking-[-0.03em] md:text-4xl">
-              Have a question? Here to help.
+      <section
+        id="quote"
+        className="scroll-mt-24 bg-[linear-gradient(145deg,oklch(0.26_0.07_265),oklch(0.32_0.09_250)_45%,oklch(0.4_0.12_45/0.55))]"
+      >
+        <div className="mx-auto grid max-w-[1200px] gap-8 px-4 py-14 md:grid-cols-12 md:gap-10 md:px-6 md:py-16">
+          <div className="text-foam md:col-span-5">
+            <p className="inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-white/90">
+              Free quote · No obligation
+            </p>
+            <h2 className="mt-4 text-3xl font-bold tracking-[-0.03em] md:text-4xl">
+              Tell us what needs cover. We handle the rest.
             </h2>
             <p className="mt-4 max-w-[40ch] leading-relaxed text-foam/80">
-              Our desk is your extended family for cover questions. Call, request a
-              callback, or leave a note. Weekdays before 7 pm.
+              Share a few details. A Bima Hub advisor prepares options and calls on
+              a weekday before 7 pm.
             </p>
-            <div className="mt-6 space-y-2 text-sm">
-              <p>
-                <span className="text-foam/70">Sales & quotes </span>
-                <a href="tel:+919876543210" className="font-semibold hover:underline">
-                  +91 98765 43210
-                </a>
-              </p>
-              <p>
-                <span className="text-foam/70">Email </span>
-                <a
-                  href="mailto:desk@bimahub.in"
-                  className="font-semibold hover:underline"
-                >
-                  desk@bimahub.in
-                </a>
-              </p>
-              <p className="text-foam/70">Andheri East, Mumbai</p>
+            <ol className="mt-8 flex flex-col gap-4">
+              {[
+                "Fill the form with name, mobile, city, and cover",
+                "We compare two or three wordings for you",
+                "You decide. We place the policy and stay for claims",
+              ].map((step, index) => (
+                <li key={step} className="flex gap-3 text-sm leading-relaxed text-foam/90">
+                  <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                    {index + 1}
+                  </span>
+                  {step}
+                </li>
+              ))}
+            </ol>
+            <div className="mt-8 grid gap-3 text-sm sm:grid-cols-2">
+              <a
+                href="tel:+919876543210"
+                className="rounded-[14px] border border-white/15 bg-white/10 px-4 py-3 backdrop-blur hover:bg-white/15"
+              >
+                <span className="block text-xs text-foam/70">Talk to expert</span>
+                <span className="font-semibold">+91 98765 43210</span>
+              </a>
+              <a
+                href="mailto:desk@bimahub.in"
+                className="rounded-[14px] border border-white/15 bg-white/10 px-4 py-3 backdrop-blur hover:bg-white/15"
+              >
+                <span className="block text-xs text-foam/70">Email the desk</span>
+                <span className="font-semibold">desk@bimahub.in</span>
+              </a>
             </div>
             <Accordion className="mt-8 max-w-md border-t border-foam/20">
               {QUESTIONS.map((item) => (
@@ -514,13 +532,27 @@ export default function HomePage() {
               ))}
             </Accordion>
           </div>
-          <div className="rounded-[16px] bg-card p-5 text-foreground md:col-span-7 md:p-8">
-            <h3 className="text-2xl font-bold tracking-[-0.03em]">Get a free quote</h3>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Protect your family, vehicle, or shop. We call back on a weekday.
-            </p>
-            <div className="mt-6">
-              <CallbackForm />
+
+          <div className="md:col-span-7">
+            <div className="overflow-hidden rounded-[24px] bg-card shadow-[0_30px_70px_-28px_oklch(0.15_0.05_265/0.65)]">
+              <div className="border-b border-border bg-gradient-to-r from-sky/60 to-orange-50/80 px-5 py-5 dark:from-muted dark:to-muted md:px-8">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-2xl font-bold tracking-[-0.03em] text-foreground">
+                      Get a free quote
+                    </h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Protect your family, vehicle, or shop in a few details.
+                    </p>
+                  </div>
+                  <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                    Takes under 1 min
+                  </span>
+                </div>
+              </div>
+              <div className="p-5 md:p-8">
+                <CallbackForm />
+              </div>
             </div>
           </div>
         </div>

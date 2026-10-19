@@ -21,7 +21,7 @@ const LINES: { value: CalcLine; label: string }[] = [
 ];
 
 const fieldClass =
-  "h-12 rounded-[12px] border-input bg-background px-3 text-base text-foreground";
+  "h-12 rounded-[14px] border-border bg-muted/40 px-3.5 text-base text-foreground transition-colors focus-visible:border-primary focus-visible:bg-card focus-visible:ring-primary/20";
 
 export function PremiumCalculator() {
   const [line, setLine] = useState<CalcLine>("motor");
@@ -83,7 +83,7 @@ export function PremiumCalculator() {
   ]);
 
   return (
-    <div className="grid gap-8 rounded-[16px] border border-border bg-card p-5 shadow-[0_20px_50px_-32px_oklch(0.25_0.06_260/0.45)] md:grid-cols-12 md:p-8">
+    <div className="grid gap-8 overflow-hidden rounded-[24px] border border-border bg-card p-5 shadow-[0_24px_60px_-32px_oklch(0.3_0.08_45/0.35)] md:grid-cols-12 md:p-8">
       <div className="md:col-span-7">
         <div className="flex flex-wrap gap-2" role="tablist" aria-label="Calculator line">
           {LINES.map((item) => {
