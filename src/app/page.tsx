@@ -13,7 +13,6 @@ import {
   PhoneSection,
   SupportSection,
 } from "@/components/home-extras";
-import { PartnersSection } from "@/components/partners-section";
 import { Photo } from "@/components/photo";
 import { PremiumCalculator } from "@/components/premium-calculator";
 import {
@@ -107,8 +106,8 @@ const TRUST = [
   },
   {
     icon: Handshake,
-    title: "Side-by-side quotes",
-    body: "Two or three life and general options compared in plain language before you buy.",
+    title: "8 insurer partners",
+    body: "LIC, New India, HDFC ERGO, ICICI Lombard, Bajaj Allianz, Tata AIG, Star Health, SBI General.",
   },
   {
     icon: CurrencyInr,
@@ -147,6 +146,17 @@ const REVIEWS = [
     quote:
       "We kept the old Jeevan Anand and added Tech Term for the loan. Clear, no pressure.",
   },
+] as const;
+
+const PARTNERS = [
+  "LIC",
+  "New India Assurance",
+  "HDFC ERGO",
+  "ICICI Lombard",
+  "Bajaj Allianz",
+  "Tata AIG",
+  "Star Health",
+  "SBI General",
 ] as const;
 
 const QUESTIONS = [
@@ -400,7 +410,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      <PartnersSection />
+      {/* Partners */}
+      <section id="partners" className="scroll-mt-24 bg-background">
+        <div className="mx-auto max-w-[1200px] px-4 py-14 md:px-6">
+          <h2 className="text-center text-3xl font-bold tracking-[-0.03em]">
+            Our partners
+          </h2>
+          <p className="mx-auto mt-2 max-w-[40ch] text-center text-muted-foreground">
+            Leading insurers we place with, set in type. The list changes when a
+            wording stops earning its place.
+          </p>
+          <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+            {PARTNERS.map((name) => (
+              <li
+                key={name}
+                className="text-lg font-semibold tracking-[-0.02em] text-foreground/80"
+              >
+                {name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       <SupportSection />
 

@@ -27,8 +27,8 @@ const FAVOURITES = [
     icon: MagnifyingGlass,
   },
   {
-    title: "Insurer-agnostic advice",
-    body: "We compare life and general cover options. You pick the wording that fits, not a house favourite.",
+    title: "8 insurer partners",
+    body: "LIC, New India, HDFC ERGO, ICICI Lombard, Bajaj Allianz, Tata AIG, Star Health, SBI General.",
     accent: "border-l-sky-500 text-sky-600 dark:text-sky-400",
     icon: ShieldCheck,
   },
