@@ -1,8 +1,8 @@
 # Bima Hub
 
-An Indian insurance landing site for motor, health, life including LIC, and shop or home cover. Inspired by premium insurance LPs: hero quote form, cover grid, premium calculator, reviews, FAQ, and a full get-a-quote section.
+An Indian insurance marketplace-style website for comparing and requesting quotes on motor, health, life including LIC, and shop or home cover. Homepage layout is inspired by popular Indian insurance portals: product icon hub, trust strip, calculators, advantage band, reviews, partners, and a get-a-quote desk.
 
-This is a working preview. Quote requests are validated and saved to `data/callbacks.ndjson` on the machine running the site. They are not emailed or texted. The calculator shows planning ranges only. Replace phone, email, and address before you publish, and connect the form to your own inbox.
+This is a working preview. Quote requests are validated and saved to `data/callbacks.ndjson`. They are not emailed. The premium calculator shows planning ranges only. Replace phone, email, and address before you publish.
 
 ## Run locally
 
@@ -11,18 +11,19 @@ npm install
 npm run dev
 ```
 
-The dev server listens on [http://127.0.0.1:4317](http://127.0.0.1:4317).
+Dev server: [http://127.0.0.1:4317](http://127.0.0.1:4317)
 
 ```bash
 npm run lint
 npm run build
 ```
 
-## What you can click through
+## Homepage sections
 
-- Home: hero quote form, covers, insurance premium calculator, about, reviews, FAQ, and get-a-quote panel
-- Motor, health, life (LIC), shop and home detail pages
-- Claims and about
-- Contact quote form
+- Product tiles: term, health, car, bike, LIC, shop and home, top-up, pension, commercial, calculators
+- Trust strip and popular plans
+- Motor / health / term premium calculator
+- Bima Hub advantage, reviews, insurer partners
+- Help desk + free quote form
 
-Light and dark follow the system theme. A control in the header switches them.
+Detail pages for each cover line, claims, about, and contact remain available.

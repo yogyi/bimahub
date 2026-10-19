@@ -1,15 +1,18 @@
 # Bima Hub design
 
-Structure follows a premium insurance landing page pattern: hero with quote form, quick benefits, cover grid, premium calculator, about accordion, reviews, CTA band, features, steps, FAQ, and a two-column quote panel.
+Homepage follows an Indian insurance marketplace pattern: sticky top bar, product icon grid, promo cards, trust strip, calculators, advantage, reviews, partners, and quote desk.
 
 ## Colour
 
-Bright blue primary on cool paper. Deep navy for bands and the calculator result panel. One warm amber accent for secondary CTAs. Dark mode keeps the same roles on inverted surfaces.
+- Orange primary for Get a quote actions
+- Blue brand for logo, icons, and emphasis
+- Navy for dark help/quote bands
+- Cool white stage background
 
 ## Type
 
-Plus Jakarta Sans. Semibold display, medium UI. No serif, no gradient text.
+Plus Jakarta Sans. Bold display on the home hub. No serif, no gradient text.
 
 ## Shape
 
-Pill buttons. Twelve-pixel radius on photos, forms, and panels. Floating pill nav.
+Pill buttons. Soft 12 to 16px radius on product tiles and forms. Sticky full-width header (not floating pill).
