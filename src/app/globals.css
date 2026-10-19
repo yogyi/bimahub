@@ -221,6 +221,29 @@
   }
 }
 
+@keyframes partner-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partner-marquee-track {
+  animation: partner-marquee 36s linear infinite;
+}
+
+.partner-marquee:hover .partner-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (max-width: 1023px) {
+  .partner-marquee {
+    display: none;
+  }
+}
+
 dialog.menu {
   margin: 0;
   width: 100%;

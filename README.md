@@ -23,7 +23,7 @@ npm run build
 - Product tiles: term, health, car, bike, LIC, shop and home, top-up, pension, commercial, calculators
 - Trust strip and popular plans
 - Motor / health / term premium calculator
-- Bima Hub advantage, reviews, insurer partners
+- Bima Hub advantage, reviews, sample partner strip (example.com placeholders)
 - Help desk + free quote form
 
 Detail pages for each cover line, claims, about, and contact remain available.
