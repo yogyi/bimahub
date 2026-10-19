@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cn } from "cn";
 import { buttonVariants } from "@/components/ui/button";
 
 export function CallbackBand({
@@ -14,9 +15,10 @@ export function CallbackBand({
         </h2>
         <Link
           href="/contact"
-          className={buttonVariants({
-            className: "bg-foam text-pine-deep hover:bg-foam/90",
-          })}
+          className={cn(
+            buttonVariants(),
+            "bg-foam text-pine-deep hover:bg-foam/90 dark:bg-foam dark:text-pine-deep dark:hover:bg-foam/90",
+          )}
         >
           Request a callback
         </Link>

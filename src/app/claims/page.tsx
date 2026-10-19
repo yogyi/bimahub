@@ -16,6 +16,21 @@ const MOTOR = [
   "Do not agree fault at the roadside. Fault is for the survey and, if needed, the police.",
 ];
 
+const AFTER = [
+  {
+    title: "The same day",
+    body: "We confirm the policy is in force, tell you which photographs still matter, and open the intimation with the insurer if you want us to.",
+  },
+  {
+    title: "The survey or the hospital",
+    body: "On motor and property we press for the surveyor. On health we stay with the pre-authorisation and the room category, because that is where bills go wrong.",
+  },
+  {
+    title: "Until it is decided",
+    body: "You get a plain update when the insurer asks for a paper, and when they accept or reject. The decision is still theirs. We do not promise a number.",
+  },
+];
+
 const HEALTH = [
   "Carry the health card and a photo identity.",
   "Ask the hospital to start pre-authorisation, and tell us the room category they have offered.",
@@ -55,6 +70,23 @@ export default function ClaimsPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="border-t border-border bg-background">
+        <div className="mx-auto max-w-[760px] px-4 py-16 md:px-6 md:py-20">
+          <h2 className="text-3xl tracking-[-0.03em]">After you call</h2>
+          <div className="mt-8 flex flex-col">
+            {AFTER.map((item, index) => (
+              <article
+                key={item.title}
+                className={index === 0 ? "py-6" : "border-t border-border py-6"}
+              >
+                <h3 className="text-xl tracking-[-0.03em]">{item.title}</h3>
+                <p className="mt-2 leading-relaxed text-muted-foreground">{item.body}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -20,7 +20,6 @@ export function SiteHeader() {
   const pathname = usePathname();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const { resolvedTheme, setTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
 
   useEffect(() => {
     dialogRef.current?.close();
@@ -47,7 +46,7 @@ export function SiteHeader() {
                 href={link.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "text-sm transition-colors duration-200",
+                  "text-sm whitespace-nowrap transition-colors duration-200",
                   active
                     ? "font-medium text-foreground"
                     : "text-muted-foreground hover:text-foreground",
@@ -57,6 +56,18 @@ export function SiteHeader() {
               </Link>
             );
           })}
+          <Link
+            href="/about"
+            aria-current={pathname === "/about" ? "page" : undefined}
+            className={cn(
+              "text-sm whitespace-nowrap transition-colors duration-200",
+              pathname === "/about"
+                ? "font-medium text-foreground"
+                : "text-muted-foreground hover:text-foreground",
+            )}
+          >
+            Advisors
+          </Link>
         </nav>
 
         <div className="flex items-center gap-1.5">
@@ -64,14 +75,11 @@ export function SiteHeader() {
             variant="ghost"
             size="icon"
             className="size-11 text-foreground"
-            aria-label={isDark ? "Use light theme" : "Use dark theme"}
-            onClick={() => setTheme(isDark ? "light" : "dark")}
+            aria-label="Switch color theme"
+            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
           >
-            {isDark ? (
-              <Sun weight="regular" className="size-5" />
-            ) : (
-              <Moon weight="regular" className="size-5" />
-            )}
+            <Sun weight="regular" className="hidden size-5 dark:block" />
+            <Moon weight="regular" className="size-5 dark:hidden" />
           </Button>
 
           <Link href={callbackHref} className={cn(buttonVariants(), "hidden sm:inline-flex")}>
@@ -120,7 +128,7 @@ export function SiteHeader() {
               className="py-2 text-3xl tracking-[-0.03em] text-foreground"
               onClick={() => dialogRef.current?.close()}
             >
-              About
+              Advisors
             </Link>
           </nav>
           <Link

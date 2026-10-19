@@ -6,7 +6,7 @@ const LINKS = [
   { href: "/health", label: "Health" },
   { href: "/life", label: "Life" },
   { href: "/claims", label: "Claims" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "Advisors" },
 ];
 
 export function SiteFooter() {

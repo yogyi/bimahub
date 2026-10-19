@@ -23,6 +23,29 @@ const VEHICLES = [
   },
 ];
 
+const BEFORE = [
+  {
+    title: "Declared value",
+    body: "A low insured declared value makes the premium look kind and underpays a total loss. We set it from the vehicle, not from the cheapest quote on a screen.",
+  },
+  {
+    title: "No-claim bonus",
+    body: "The discount sits on the previous policy. We do not take it from memory. A small dent can cost more in lost bonus than the garage bill, and we say so before you file.",
+  },
+  {
+    title: "Who drives it",
+    body: "The driver clause has to match the person who actually uses the vehicle. A private-car wording will not rescue a vehicle that earns, and a learner on the policy is not a detail to skip.",
+  },
+];
+
+const BRING = [
+  "Registration certificate.",
+  "The previous policy, if there is one.",
+  "Driving licence of the person who drives it most.",
+  "Financier name, if a bank is on the registration certificate.",
+  "For a commercial vehicle: the permit, and a sentence on what it carries.",
+];
+
 const GROUPS = [
   {
     title: "If you drive it daily",
@@ -103,6 +126,37 @@ export default function MotorPage() {
                 </ul>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border bg-background">
+        <div className="mx-auto grid max-w-[1400px] gap-10 px-4 py-16 md:grid-cols-12 md:px-6 md:py-20">
+          <h2 className="max-w-[12ch] text-3xl tracking-[-0.03em] md:col-span-4 md:text-4xl">
+            Before we quote a vehicle
+          </h2>
+          <div className="flex flex-col gap-8 md:col-span-8">
+            {BEFORE.map((item) => (
+              <article key={item.title}>
+                <h3 className="text-xl tracking-[-0.03em]">{item.title}</h3>
+                <p className="mt-2 max-w-[62ch] leading-relaxed text-muted-foreground">
+                  {item.body}
+                </p>
+              </article>
+            ))}
+            <article className="border-t border-border pt-8">
+              <h3 className="text-xl tracking-[-0.03em]">Bring these if you have them</h3>
+              <ul className="mt-4 flex max-w-[62ch] flex-col gap-2">
+                {BRING.map((item) => (
+                  <li key={item} className="leading-relaxed text-foreground">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 max-w-[62ch] leading-relaxed text-muted-foreground">
+                If the papers are in a drawer, call anyway. We will tell you which photograph is enough to start.
+              </p>
+            </article>
           </div>
         </div>
       </section>

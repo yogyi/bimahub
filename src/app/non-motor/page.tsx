@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     "Shop, home, stock, marine transit, and liability cover for businesses and families.",
 };
 
+const BRING = [
+  "A normal day's stock figure, not the busiest week of the year.",
+  "The previous fire, shop, or home policy, if one exists.",
+  "Construction of the building, and what is stored overnight.",
+  "Whether goods leave the premises, and by what road.",
+  "A photograph of the shutter or the godown when the risk is unusual.",
+];
+
 const CLUSTERS = [
   {
     title: "Premises",
@@ -55,6 +63,27 @@ export default function NonMotorPage() {
               </p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="border-t border-border bg-background">
+        <div className="mx-auto grid max-w-[1400px] gap-10 px-4 py-16 md:grid-cols-12 md:px-6 md:py-20">
+          <h2 className="max-w-[14ch] text-3xl tracking-[-0.03em] md:col-span-4 md:text-4xl">
+            Before we quote the premises
+          </h2>
+          <div className="md:col-span-8">
+            <p className="max-w-[62ch] leading-relaxed text-muted-foreground">
+              Building, contents, and stock are three sums. Jewellery inside a home policy usually sits under its own sub-limit. We write those numbers down before a schedule is issued, so a burst pipe or a missing chain is not a surprise.
+            </p>
+            <h3 className="mt-8 text-xl tracking-[-0.03em]">Bring these if you have them</h3>
+            <ul className="mt-4 flex max-w-[62ch] flex-col gap-2">
+              {BRING.map((item) => (
+                <li key={item} className="leading-relaxed text-foreground">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

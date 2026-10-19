@@ -29,8 +29,8 @@ export default function ContactPage() {
         <h1 className="text-[clamp(2.25rem,4vw,3.4rem)] leading-[1.08] font-medium tracking-[-0.03em]">
           Request a callback
         </h1>
-        <p className="mt-4 max-w-[46ch] text-lg leading-relaxed text-muted-foreground">
-          Tell us the cover and the city. A sentence on the vehicle, the shop, or the family is enough.
+        <p className="mt-4 max-w-[52ch] text-lg leading-relaxed text-muted-foreground">
+          Tell us the cover and the city. A sentence on the vehicle, the shop, or the family is enough. If a registration number, a current policy, or a set of ages is nearby, keep it with you. If it is not, send the note anyway.
         </p>
         <div id="callback" className="mt-10 scroll-mt-28">
           <CallbackForm />

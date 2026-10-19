@@ -40,6 +40,24 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="border-t border-border bg-background">
+        <div className="mx-auto grid max-w-[1400px] gap-10 px-4 py-16 md:grid-cols-12 md:px-6 md:py-20">
+          <h2 className="max-w-[12ch] text-3xl tracking-[-0.03em] md:col-span-4 md:text-4xl">
+            A first meeting
+          </h2>
+          <div className="flex max-w-[62ch] flex-col gap-4 leading-relaxed text-muted-foreground md:col-span-8">
+            <p>
+              Forty minutes is usually enough. Bring the policies you already hold, including the ones you think are fine. We mark what is missing and what is duplicated.
+            </p>
+            <p>
+              You leave with a written note of what we would change and what we would leave alone. Nothing is proposed until you ask.
+            </p>
+            <p className="text-foreground">
+              Karve Road, Pune. Weekdays, by appointment, before 7 pm. Other cities by call and video. Phone +91 98220 46173.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="border-t border-border bg-background">
         <div className="mx-auto max-w-[760px] px-4 py-16 md:px-6 md:py-20">
           <h2 className="text-3xl tracking-[-0.03em]">How the desk is paid</h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">
