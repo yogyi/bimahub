@@ -3,7 +3,7 @@ import { buttonVariants } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
-    <section className="bg-background pt-24">
+    <section className="bg-background pt-10">
       <div className="mx-auto flex min-h-[70dvh] max-w-[1200px] flex-col justify-center px-4 py-16 md:px-6">
         <h1 className="max-w-3xl text-[clamp(2.25rem,4vw,3.4rem)] leading-[1.08] font-semibold tracking-[-0.03em]">
           That page is not on Bima Hub.

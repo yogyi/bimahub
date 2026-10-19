@@ -7,413 +7,395 @@ import {
 } from "@/components/ui/accordion";
 import { buttonVariants } from "@/components/ui/button";
 import { CallbackForm } from "@/components/callback-form";
-import { Photo } from "@/components/photo";
 import { PremiumCalculator } from "@/components/premium-calculator";
 import { cn } from "cn";
 import {
+  Bicycle,
+  Buildings,
   Car,
-  FirstAid,
-  House,
+  CurrencyInr,
+  FirstAidKit,
+  Handshake,
+  Heart,
   IdentificationCard,
   PhoneCall,
   SealCheck,
   ShieldCheck,
+  Storefront,
   UsersThree,
+  Wallet,
 } from "@phosphor-icons/react/ssr";
 
-const BENEFITS = [
+const PRODUCTS = [
   {
-    icon: SealCheck,
-    title: "Compare before you pay",
-    body: "We put two or three wordings side by side. Premium is the last column, not the first.",
-  },
-  {
-    icon: PhoneCall,
-    title: "Same desk for the claim",
-    body: "The person who places the policy is the person you call when something goes wrong.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Indian covers, plain Hindi or English",
-    body: "Motor, health, LIC and term life, shop and home. Explained for your city, not a brochure.",
-  },
-  {
-    icon: UsersThree,
-    title: "Families and small businesses",
-    body: "From a hatchback in Pune to a hardware shop in Surat. One hub for both.",
-  },
-];
-
-const COVERS = [
-  {
-    href: "/motor",
-    title: "Motor insurance",
-    icon: Car,
-    body: "Private cars, two-wheelers, and commercial vehicles. Own damage, third party, NCB, and add-ons that match how you drive.",
-    points: ["IDV set from the vehicle", "NCB protected when it should be", "Bank on RC named correctly"],
+    href: "/life",
+    title: "Term life",
+    hint: "High cover, low premium",
+    icon: IdentificationCard,
   },
   {
     href: "/health",
-    title: "Health insurance",
-    icon: FirstAid,
-    body: "Family floaters, senior plans, and super top-ups. We read the room-rent cap before we talk about the premium.",
-    points: ["Cashless hospital list check", "Waiting periods explained", "Portability when you switch"],
+    title: "Health",
+    hint: "Family & senior plans",
+    icon: FirstAidKit,
+  },
+  {
+    href: "/motor",
+    title: "Car",
+    hint: "OD + third party",
+    icon: Car,
+  },
+  {
+    href: "/motor",
+    title: "Bike",
+    hint: "Two-wheeler cover",
+    icon: Bicycle,
   },
   {
     href: "/life",
-    title: "Life & LIC",
-    icon: IdentificationCard,
-    body: "LIC Tech Term, Jeevan Anand, Jeevan Labh, Jeevan Umang, Jeevan Shanti, Amritbaal, plus term from other life insurers.",
-    points: ["Term when it is cleaner", "Illustration read with you", "Nominee written correctly"],
+    title: "LIC plans",
+    hint: "Anand, Labh, Umang",
+    icon: Heart,
   },
   {
     href: "/non-motor",
     title: "Shop & home",
-    icon: House,
-    body: "Fire, burglary, stock, goods on the road, and home structure plus contents. The trade calls this non-motor.",
-    points: ["Building and stock as separate sums", "Marine for goods in transit", "Public liability when needed"],
+    hint: "Fire, stock, liability",
+    icon: Storefront,
   },
-];
+  {
+    href: "/health",
+    title: "Super top-up",
+    hint: "Extra hospital cover",
+    icon: ShieldCheck,
+  },
+  {
+    href: "/life",
+    title: "Pension",
+    hint: "Jeevan Shanti & more",
+    icon: Wallet,
+  },
+  {
+    href: "/motor",
+    title: "Commercial",
+    hint: "Goods & passenger",
+    icon: Buildings,
+  },
+  {
+    href: "/#calculator",
+    title: "Calculators",
+    hint: "Motor, health, term",
+    icon: CurrencyInr,
+  },
+] as const;
 
-const STEPS = [
+const PROMOS = [
   {
-    title: "Tell us what needs cover",
-    body: "Use the quote form or the calculator. A vehicle number, ages, or a shop photo is enough to start.",
+    title: "Term cover for the income that keeps the house",
+    body: "Compare Tech Term and private term plans. We start from who depends on you, not from a plan name.",
+    href: "/life",
+    cta: "View term life",
+    tone: "bg-brand text-white",
   },
   {
-    title: "We prepare options",
-    body: "You get a short comparison of limits and exclusions, not only a cheapest-premium screenshot.",
+    title: "Health plans read for room rent first",
+    body: "Family floaters and senior cover. A cheap premium with a tight room cap often costs more in hospital.",
+    href: "/health",
+    cta: "View health",
+    tone: "bg-sky text-foreground",
   },
   {
-    title: "You decide, we place",
-    body: "Proposal, payment link, and the schedule. We stay for renewal and for the claim.",
+    title: "Motor renewal without losing NCB by mistake",
+    body: "Bring the previous policy. We set IDV and check whether a small claim is worth the bonus it removes.",
+    href: "/motor",
+    cta: "View motor",
+    tone: "bg-navy text-foam",
   },
-];
+] as const;
+
+const TRUST = [
+  {
+    icon: UsersThree,
+    title: "Families & shopkeepers",
+    body: "Cover placed for Indian households and small businesses, not only metros.",
+  },
+  {
+    icon: Handshake,
+    title: "8 insurer partners",
+    body: "LIC, New India, HDFC ERGO, ICICI Lombard, Bajaj Allianz, Tata AIG, Star Health, SBI General.",
+  },
+  {
+    icon: CurrencyInr,
+    title: "Clear price first",
+    body: "Wordings and exclusions sit beside the premium before you pay.",
+  },
+  {
+    icon: PhoneCall,
+    title: "Claims help built in",
+    body: "The same desk that placed the policy helps with intimation and papers.",
+  },
+] as const;
+
+const ADVANTAGE = [
+  {
+    title: "One of the clearer prices",
+    body: "We compare limits before we chase the cheapest screenshot.",
+  },
+  {
+    title: "Advice that keeps you first",
+    body: "If a term plan pays us less and protects the family better, we say that.",
+  },
+  {
+    title: "Placed with registered insurers",
+    body: "Registration details are shared before you sign. We do not invent a licence number on this page.",
+  },
+  {
+    title: "Claims support",
+    body: "Surveyor, pre-authorisation, and papers. The insurer still decides.",
+  },
+  {
+    title: "Happy to help",
+    body: "Weekday calls before 7 pm. Mumbai desk, India-wide by phone and video.",
+  },
+] as const;
 
 const REVIEWS = [
   {
     name: "Neelam Joshi",
-    cover: "Car policy, Kothrud",
+    place: "Kothrud · Car",
     quote:
       "She called the garage, then she called me. The surveyor was at the car the next morning.",
   },
   {
     name: "Ravi Mehta",
-    cover: "Shop package, Surat",
+    place: "Surat · Shop",
     quote:
-      "They wrote stock and building as two sums. After the short circuit, the surveyor already had the bills we kept.",
+      "Stock and building were written as two sums. After the short circuit, the surveyor already had our bills.",
   },
   {
     name: "Ananya Iyer",
-    cover: "Family floater, Bengaluru",
+    place: "Bengaluru · Health",
     quote:
-      "They stopped us buying a cheap plan with a tiny room-rent cap. The hospital we use would have cut the whole bill.",
+      "They stopped a cheap plan with a tiny room-rent cap. Our hospital would have cut the whole bill.",
   },
   {
     name: "Suresh Patil",
-    cover: "LIC term, Nashik",
+    place: "Nashik · LIC term",
     quote:
-      "We brought an old Jeevan Anand. They said keep it, and add Tech Term for the loan. Clear, no pressure.",
+      "We kept the old Jeevan Anand and added Tech Term for the loan. Clear, no pressure.",
   },
-];
+] as const;
 
-const FEATURES = [
-  {
-    title: "IRDAI-registered placement",
-    body: "Registration details are shared before you sign a proposal. We do not print a licence number we have not handed you.",
-  },
-  {
-    title: "Premium calculator",
-    body: "Motor, health, and term life ranges in rupees. Useful for planning. The insurer quote is what binds.",
-  },
-  {
-    title: "Multi-insurer panel",
-    body: "LIC, New India, HDFC ERGO, ICICI Lombard, Bajaj Allianz, Tata AIG, Star Health, SBI General, and more when the wording fits.",
-  },
-  {
-    title: "Claims hand-holding",
-    body: "Intimation, surveyor, pre-authorisation, papers. The insurer still decides. You are not alone on the toll-free line.",
-  },
-];
+const PARTNERS = [
+  "LIC",
+  "New India Assurance",
+  "HDFC ERGO",
+  "ICICI Lombard",
+  "Bajaj Allianz",
+  "Tata AIG",
+  "Star Health",
+  "SBI General",
+] as const;
 
 const QUESTIONS = [
   {
+    q: "Is Bima Hub an insurer?",
+    a: "No. We are an advisory desk. Policies are issued by the insurer you choose. Claim decisions stay with that insurer.",
+  },
+  {
+    q: "Can I compare plans like on a marketplace?",
+    a: "Yes. Pick a product tile, use the calculator for a range, then request a quote. We send two or three wordings side by side.",
+  },
+  {
+    q: "Do you only sell LIC?",
+    a: "No. LIC plans many families already know, plus term and health from other insurers when that fits better.",
+  },
+  {
     q: "Is the calculator the final premium?",
-    a: "No. It is a planning range based on common Indian market rates. Age, medicals, IDV, city, add-ons, and underwriting change the real quote.",
+    a: "No. It is a planning range in rupees. Age, medicals, IDV, city, and add-ons change the real quote.",
   },
-  {
-    q: "Do you sell only LIC?",
-    a: "No. Life includes LIC plans people know by name, and term plans from other life insurers when that protects the family better.",
-  },
-  {
-    q: "Can I renew a policy I bought elsewhere?",
-    a: "Yes. Bring the current schedule. On health, portability can keep waiting periods you have already served.",
-  },
-  {
-    q: "Do I pay Bima Hub a fee?",
-    a: "No separate advice fee. The insurer pays a commission from the premium. We will still say when a cheaper plan has a bad exclusion.",
-  },
-  {
-    q: "Which cities do you cover?",
-    a: "The desk sits in Andheri East, Mumbai. Clients across India work with us by call and video. Visits are arranged in Mumbai and Pune when the risk needs eyes on it.",
-  },
-];
+] as const;
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative min-h-[100dvh] overflow-hidden bg-primary text-primary-foreground">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_15%_20%,oklch(0.78_0.12_230/0.45),transparent_55%),radial-gradient(ellipse_70%_50%_at_90%_8%,oklch(0.82_0.12_70/0.35),transparent_50%)]"
-        />
-        <div className="relative mx-auto grid min-h-[100dvh] max-w-[1200px] items-center gap-10 px-4 pt-28 pb-14 md:grid-cols-12 md:px-6 md:pb-20">
-          <div className="rise md:col-span-6">
-            <h1 className="text-[clamp(2.4rem,4.5vw,3.6rem)] leading-[1.05] font-semibold tracking-[-0.03em] text-white">
-              Bima Hub
+      {/* Hero: product hub + promos, Policybazaar-style marketplace */}
+      <section className="bg-[linear-gradient(180deg,oklch(0.96_0.03_240),oklch(0.99_0.005_250)_55%)] dark:bg-none dark:bg-background">
+        <div className="mx-auto grid max-w-[1200px] gap-8 px-4 py-10 md:grid-cols-12 md:px-6 md:py-14">
+          <div className="rise md:col-span-7">
+            <h1 className="text-[clamp(1.85rem,3.5vw,2.75rem)] font-bold leading-[1.15] tracking-[-0.03em] text-foreground">
+              Let&apos;s find you the{" "}
+              <span className="text-brand">best insurance</span> in India
             </h1>
-            <p className="mt-4 text-[clamp(1.35rem,2.4vw,1.85rem)] font-medium leading-snug tracking-[-0.02em] text-white">
-              The right cover for your family, vehicle, or shop. Compare first.
-              Pay once you understand it.
+            <p className="mt-3 max-w-[46ch] text-base leading-relaxed text-muted-foreground md:text-lg">
+              Compare term, health, motor, LIC, and shop or home cover. Get a
+              quote from Bima Hub without the jargon trap.
             </p>
-            <p className="rise rise-delay mt-5 max-w-[40ch] text-base leading-relaxed text-white/85 md:text-lg">
-              Motor, health, life including LIC, and shop or home cover. Compare
-              wordings, estimate a premium, and request a free quote from Bima Hub.
-            </p>
-            <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row">
-              <a
-                href="#quote"
-                className={cn(
-                  buttonVariants(),
-                  "bg-accent text-accent-foreground hover:bg-accent/90",
-                )}
-              >
-                Get a free quote
-              </a>
-              <a
-                href="#calculator"
-                className={cn(
-                  buttonVariants({ variant: "outline" }),
-                  "border-transparent bg-white text-navy hover:bg-white/90 dark:border-transparent dark:bg-white dark:text-navy",
-                )}
-              >
-                Try the calculator
-              </a>
+
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
+              {PRODUCTS.map((item) => (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  className="product-tile flex flex-col items-center rounded-[14px] border border-border bg-card px-2 py-4 text-center"
+                >
+                  <span className="flex size-12 items-center justify-center rounded-full bg-sky text-brand">
+                    <item.icon weight="duotone" className="size-6" />
+                  </span>
+                  <span className="mt-3 text-sm font-semibold text-foreground">
+                    {item.title}
+                  </span>
+                  <span className="mt-1 text-[11px] leading-snug text-muted-foreground">
+                    {item.hint}
+                  </span>
+                </Link>
+              ))}
             </div>
-            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80">
-              <li>Weekday calls before 7 pm</li>
-              <li>No separate advice fee</li>
-              <li>Claims help included</li>
-            </ul>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/#quote" className={buttonVariants()}>
+                Get a free quote
+              </Link>
+              <Link
+                href="/#calculator"
+                className={buttonVariants({ variant: "outline" })}
+              >
+                Check premium
+              </Link>
+            </div>
           </div>
 
-          <div className="md:col-span-6">
-            <div className="rounded-[16px] bg-background p-5 text-foreground shadow-[0_24px_60px_-28px_oklch(0.2_0.06_265/0.55)] md:p-7">
-              <div className="mb-5 flex items-start justify-between gap-3">
-                <div>
-                  <h2 className="text-2xl font-semibold tracking-[-0.03em]">
-                    Get a free quote
-                  </h2>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Protect your family, vehicle, or shop.
-                  </p>
-                </div>
-              </div>
-              <CallbackForm compact />
-            </div>
+          <div className="rise rise-delay flex flex-col gap-3 md:col-span-5">
+            {PROMOS.map((promo) => (
+              <article
+                key={promo.title}
+                className={cn("rounded-[16px] p-5", promo.tone)}
+              >
+                <h2 className="text-lg font-semibold leading-snug tracking-[-0.02em]">
+                  {promo.title}
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed opacity-90">{promo.body}</p>
+                <Link
+                  href={promo.href}
+                  className="mt-4 inline-flex text-sm font-semibold underline underline-offset-4"
+                >
+                  {promo.cta}
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-background">
-        <div className="mx-auto grid max-w-[1200px] gap-8 px-4 py-14 md:grid-cols-2 md:px-6 lg:grid-cols-4">
-          {BENEFITS.map((item) => (
-            <article key={item.title} className="flex flex-col gap-3">
-              <item.icon weight="duotone" className="size-9 text-primary" />
-              <h3 className="text-lg font-semibold tracking-[-0.02em]">{item.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+      {/* Trust strip */}
+      <section className="border-y border-border bg-card">
+        <div className="mx-auto grid max-w-[1200px] gap-6 px-4 py-10 sm:grid-cols-2 md:grid-cols-4 md:px-6">
+          {TRUST.map((item) => (
+            <article key={item.title} className="flex gap-3">
+              <item.icon weight="duotone" className="mt-0.5 size-8 shrink-0 text-brand" />
+              <div>
+                <h2 className="text-base font-semibold">{item.title}</h2>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {item.body}
+                </p>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="covers" className="scroll-mt-28 border-t border-border bg-muted/40">
-        <div className="mx-auto max-w-[1200px] px-4 py-16 md:px-6 md:py-20">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold tracking-[-0.03em] md:text-4xl">
-              Covers Indians actually buy
-            </h2>
-            <p className="mt-3 text-lg text-muted-foreground">
-              Four lines. Tap through for detail, or start with a quote.
-            </p>
+      {/* Popular picks */}
+      <section id="covers" className="scroll-mt-24 bg-background">
+        <div className="mx-auto max-w-[1200px] px-4 py-14 md:px-6 md:py-16">
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2 className="text-3xl font-bold tracking-[-0.03em] md:text-4xl">
+                Popular insurance on Bima Hub
+              </h2>
+              <p className="mt-2 max-w-[48ch] text-muted-foreground">
+                Start with the line you need. Each page explains what we check
+                before a quote.
+              </p>
+            </div>
+            <Link href="/#quote" className={cn(buttonVariants(), "w-fit")}>
+              Talk to an expert
+            </Link>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {COVERS.map((cover) => (
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                href: "/life",
+                title: "Term life insurance",
+                body: "Cover for dependents and loans. LIC Tech Term and private term compared in plain language.",
+              },
+              {
+                href: "/health",
+                title: "Health insurance",
+                body: "Family floaters, parents, and top-ups. Room rent and waiting periods before premium.",
+              },
+              {
+                href: "/motor",
+                title: "Car & bike insurance",
+                body: "Own damage, third party, NCB, and add-ons matched to how the vehicle is used.",
+              },
+              {
+                href: "/non-motor",
+                title: "Shop & home insurance",
+                body: "Fire, burglary, stock, goods on the road, and home structure plus contents.",
+              },
+            ].map((item) => (
               <Link
-                key={cover.href}
-                href={cover.href}
-                className="cover-link group rounded-[16px] border border-border bg-card p-6 transition-colors hover:border-primary/40"
+                key={item.href}
+                href={item.href}
+                className="product-tile rounded-[16px] border border-border bg-card p-5"
               >
-                <cover.icon weight="duotone" className="size-9 text-primary" />
-                <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em]">
-                  {cover.title}
-                </h3>
-                <p className="mt-3 max-w-[48ch] leading-relaxed text-muted-foreground">
-                  {cover.body}
+                <h3 className="text-lg font-semibold tracking-[-0.02em]">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {item.body}
                 </p>
-                <ul className="mt-4 flex flex-col gap-1.5 text-sm text-foreground">
-                  {cover.points.map((point) => (
-                    <li key={point} className="flex gap-2">
-                      <span className="text-primary" aria-hidden>
-                        ✓
-                      </span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+                <span className="mt-4 inline-block text-sm font-semibold text-brand">
+                  View plans
+                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="calculator" className="scroll-mt-28 bg-background">
-        <div className="mx-auto max-w-[1200px] px-4 py-16 md:px-6 md:py-20">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold tracking-[-0.03em] md:text-4xl">
-              Insurance premium calculator
-            </h2>
-            <p className="mt-3 text-lg text-muted-foreground">
-              Rough yearly ranges in Indian rupees for motor, health, and term life.
-              Use it to plan, then ask for a real quote.
-            </p>
-          </div>
-          <div className="mt-10">
+      {/* Calculators */}
+      <section id="calculator" className="scroll-mt-24 bg-muted/60">
+        <div className="mx-auto max-w-[1200px] px-4 py-14 md:px-6 md:py-16">
+          <h2 className="text-3xl font-bold tracking-[-0.03em] md:text-4xl">
+            Insurance calculators
+          </h2>
+          <p className="mt-2 max-w-[52ch] text-muted-foreground">
+            Rough yearly ranges in Indian rupees for motor, health, and term life.
+            Use them to plan, then ask for a real quote.
+          </p>
+          <div className="mt-8">
             <PremiumCalculator />
           </div>
         </div>
       </section>
 
-      <section id="about" className="scroll-mt-28 bg-sky/50">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-4 py-16 md:grid-cols-12 md:px-6 md:py-20">
-          <div className="md:col-span-5">
-            <Photo
-              src="/images/advisor-portrait.jpg"
-              alt="Bima Hub advisor in the Mumbai desk."
-              ratio="aspect-[4/5]"
-              sizes="(min-width: 768px) 36vw, 100vw"
-            />
-          </div>
-          <div className="md:col-span-7">
-            <h2 className="text-3xl font-semibold tracking-[-0.03em] md:text-4xl">
-              Who we are
-            </h2>
-            <p className="mt-4 max-w-[52ch] text-lg leading-relaxed text-muted-foreground">
-              Bima Hub is an Indian insurance advisory desk. We place policies for
-              families and small businesses, and we stay on the phone when a claim
-              opens.
-            </p>
-            <Accordion className="mt-8 max-w-xl">
-              <AccordionItem value="mission">
-                <AccordionTrigger className="text-base font-medium hover:no-underline">
-                  What is our mission?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Make the schedule something you can explain at home. No jargon
-                  trap, no silent exclusion, no stranger on the claim call.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="believe">
-                <AccordionTrigger className="text-base font-medium hover:no-underline">
-                  What we believe
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  A cheaper premium with a bad room-rent cap or a wrong use clause
-                  is expensive later. We say that before you pay.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="paid">
-                <AccordionTrigger className="text-base font-medium hover:no-underline">
-                  How Bima Hub is paid
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Insurers pay a commission from the premium. You do not pay a
-                  separate advice fee. Registration details are shared before you
-                  sign.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-            <Link
-              href="/about"
-              className="mt-6 inline-block text-sm font-medium text-primary underline underline-offset-4"
-            >
-              Meet the advisors
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section id="reviews" className="scroll-mt-28 bg-background">
-        <div className="mx-auto max-w-[1200px] px-4 py-16 md:px-6 md:py-20">
-          <h2 className="text-center text-3xl font-semibold tracking-[-0.03em] md:text-4xl">
-            Reviews from Indian clients
-          </h2>
-          <p className="mx-auto mt-3 max-w-[42ch] text-center text-muted-foreground">
-            Real situations. The insurer still decides the claim. We stay in the middle.
-          </p>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {REVIEWS.map((review) => (
-              <figure
-                key={review.name}
-                className="rounded-[16px] border border-border bg-card p-6"
-              >
-                <blockquote className="text-lg leading-snug tracking-[-0.02em]">
-                  “{review.quote}”
-                </blockquote>
-                <figcaption className="mt-5 text-sm">
-                  <span className="font-medium text-foreground">{review.name}</span>
-                  <span className="text-muted-foreground"> · {review.cover}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-navy text-foam">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-8 px-4 py-14 md:grid-cols-12 md:px-6 md:py-16">
-          <div className="md:col-span-8">
-            <h2 className="text-3xl font-semibold tracking-[-0.03em] md:text-4xl">
-              We have got you <span className="text-accent">covered</span>
-            </h2>
-            <p className="mt-3 max-w-[48ch] text-foam/75">
-              Better coverage when the wording is right. Cost that makes sense once
-              exclusions are honest.
-            </p>
-          </div>
-          <div className="md:col-span-4 md:justify-self-end">
-            <a
-              href="#quote"
-              className={cn(
-                buttonVariants(),
-                "bg-accent text-accent-foreground hover:bg-accent/90",
-              )}
-            >
-              Contact us
-            </a>
-          </div>
-        </div>
-      </section>
-
+      {/* Advantage */}
       <section className="bg-background">
-        <div className="mx-auto max-w-[1200px] px-4 py-16 md:px-6 md:py-20">
-          <h2 className="text-center text-3xl font-semibold tracking-[-0.03em] md:text-4xl">
-            Why families choose Bima Hub
+        <div className="mx-auto max-w-[1200px] px-4 py-14 md:px-6 md:py-16">
+          <h2 className="text-center text-3xl font-bold tracking-[-0.03em] md:text-4xl">
+            Bima Hub advantage
           </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {FEATURES.map((item) => (
-              <article key={item.title}>
-                <h3 className="text-lg font-semibold tracking-[-0.02em]">{item.title}</h3>
+          <p className="mx-auto mt-3 max-w-[48ch] text-center text-muted-foreground">
+            When you place cover with us, you get more than a PDF. You get a desk
+            that still answers.
+          </p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {ADVANTAGE.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-[14px] border border-border bg-card p-4"
+              >
+                <SealCheck weight="fill" className="size-6 text-primary" />
+                <h3 className="mt-3 text-base font-semibold">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {item.body}
                 </p>
@@ -423,113 +405,132 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-muted/40">
-        <div className="mx-auto max-w-[1200px] px-4 py-16 md:px-6 md:py-20">
-          <h2 className="text-3xl font-semibold tracking-[-0.03em] md:text-4xl">
-            How a policy gets placed
+      {/* Reviews */}
+      <section id="reviews" className="scroll-mt-24 bg-sky/40 dark:bg-muted/40">
+        <div className="mx-auto max-w-[1200px] px-4 py-14 md:px-6 md:py-16">
+          <h2 className="text-center text-3xl font-bold tracking-[-0.03em] md:text-4xl">
+            What our customers are saying
           </h2>
-          <ol className="mt-10 grid gap-8 md:grid-cols-3">
-            {STEPS.map((step, index) => (
-              <li key={step.title}>
-                <p className="text-sm font-medium text-primary">Step {index + 1}</p>
-                <h3 className="mt-2 text-xl font-semibold tracking-[-0.02em]">
-                  {step.title}
-                </h3>
-                <p className="mt-2 max-w-[36ch] leading-relaxed text-muted-foreground">
-                  {step.body}
-                </p>
+          <p className="mx-auto mt-3 max-w-[40ch] text-center text-muted-foreground">
+            Real situations from Indian cities. The insurer still decides the claim.
+          </p>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {REVIEWS.map((review) => (
+              <figure
+                key={review.name}
+                className="rounded-[16px] border border-border bg-card p-5"
+              >
+                <blockquote className="text-sm leading-relaxed text-foreground">
+                  “{review.quote}”
+                </blockquote>
+                <figcaption className="mt-4 text-sm">
+                  <span className="font-semibold">{review.name}</span>
+                  <span className="mt-0.5 block text-muted-foreground">
+                    {review.place}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-[1200px] px-4 py-14 md:px-6">
+          <h2 className="text-center text-3xl font-bold tracking-[-0.03em]">
+            Our partners
+          </h2>
+          <p className="mx-auto mt-2 max-w-[40ch] text-center text-muted-foreground">
+            Leading insurers we place with, set in type. The list changes when a
+            wording stops earning its place.
+          </p>
+          <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+            {PARTNERS.map((name) => (
+              <li
+                key={name}
+                className="text-lg font-semibold tracking-[-0.02em] text-foreground/80"
+              >
+                {name}
               </li>
             ))}
-          </ol>
+          </ul>
         </div>
       </section>
 
-      <section className="bg-background">
-        <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-16 md:grid-cols-12 md:px-6 md:py-20">
-          <div className="md:col-span-4">
-            <h2 className="text-3xl font-semibold tracking-[-0.03em] md:text-4xl">
-              Before you sign
+      {/* Help + quote */}
+      <section id="quote" className="scroll-mt-24 bg-navy text-foam">
+        <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-14 md:grid-cols-12 md:px-6 md:py-16">
+          <div className="md:col-span-5">
+            <h2 className="text-3xl font-bold tracking-[-0.03em] md:text-4xl">
+              Have a question? Here to help.
             </h2>
-            <p className="mt-3 text-muted-foreground">
-              Short answers. The policy wording still governs.
+            <p className="mt-4 max-w-[40ch] leading-relaxed text-foam/80">
+              Our desk is your extended family for cover questions. Call, request a
+              callback, or leave a note. Weekdays before 7 pm.
             </p>
-          </div>
-          <Accordion className="md:col-span-8">
-            {QUESTIONS.map((item) => (
-              <AccordionItem key={item.q} value={item.q}>
-                <AccordionTrigger className="py-4 text-base font-medium hover:no-underline">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-base leading-relaxed text-muted-foreground">
-                  {item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
-      <section id="quote" className="scroll-mt-28 py-16 md:py-20">
-        <div className="mx-auto max-w-[1200px] px-4 md:px-6">
-          <div className="grid overflow-hidden rounded-[20px] md:grid-cols-2">
-            <div className="quote-panel flex flex-col justify-center p-8 text-foam md:p-10">
-              <p className="text-xl font-semibold">Clear quotes. Honest exclusions.</p>
-              <p className="mt-4 max-w-[36ch] leading-relaxed text-foam/85">
-                Tell us the cover. We prepare options, talk them through, and place
-                the policy you choose.
-              </p>
-              <p className="mt-8 text-lg font-medium">What happens next</p>
-              <ul className="mt-3 flex flex-col gap-2 text-foam/85">
-                <li>We prepare a short proposal</li>
-                <li>Together we discuss limits and premium</li>
-                <li>You decide, we start the policy</li>
-              </ul>
-              <p className="mt-8 text-sm text-foam/75">Talk to an advisor</p>
-              <p className="mt-1 text-lg font-semibold">
-                <a href="tel:+919876543210" className="hover:underline">
+            <div className="mt-6 space-y-2 text-sm">
+              <p>
+                <span className="text-foam/70">Sales & quotes </span>
+                <a href="tel:+919876543210" className="font-semibold hover:underline">
                   +91 98765 43210
                 </a>
               </p>
-              <p className="mt-1 text-sm text-foam/75">desk@bimahub.in · Andheri East, Mumbai</p>
-            </div>
-            <div className="bg-card p-8 md:p-10">
-              <h2 className="text-3xl font-semibold tracking-[-0.03em]">Get a free quote</h2>
-              <p className="mt-2 text-muted-foreground">
-                Protect your family, vehicle, or shop.
+              <p>
+                <span className="text-foam/70">Email </span>
+                <a
+                  href="mailto:desk@bimahub.in"
+                  className="font-semibold hover:underline"
+                >
+                  desk@bimahub.in
+                </a>
               </p>
-              <div className="mt-6">
-                <CallbackForm />
-              </div>
+              <p className="text-foam/70">Andheri East, Mumbai</p>
+            </div>
+            <Accordion className="mt-8 max-w-md border-t border-foam/20">
+              {QUESTIONS.map((item) => (
+                <AccordionItem key={item.q} value={item.q} className="border-foam/20">
+                  <AccordionTrigger className="text-left text-sm font-medium text-foam hover:no-underline">
+                    {item.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm text-foam/75">
+                    {item.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+          <div className="rounded-[16px] bg-card p-5 text-foreground md:col-span-7 md:p-8">
+            <h3 className="text-2xl font-bold tracking-[-0.03em]">Get a free quote</h3>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Protect your family, vehicle, or shop. We call back on a weekday.
+            </p>
+            <div className="mt-6">
+              <CallbackForm />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Short about strip */}
       <section className="border-t border-border bg-background">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-8 px-4 py-14 md:grid-cols-12 md:px-6">
-          <div className="md:col-span-7">
-            <Photo
-              src="/images/hero-table.jpg"
-              alt="Advisor explaining a policy at a dining table in India."
-              ratio="aspect-[16/10]"
-              sizes="(min-width: 768px) 55vw, 100vw"
-            />
-          </div>
-          <div className="md:col-span-5">
-            <h2 className="text-2xl font-semibold tracking-[-0.03em] md:text-3xl">
-              From the dining table to the claim desk
-            </h2>
-            <p className="mt-3 leading-relaxed text-muted-foreground">
-              Bima Hub is built for Indian households and shopkeepers who want cover
-              they can explain, and a phone number that still answers.
-            </p>
-            <Link
-              href="/claims"
-              className="mt-5 inline-block text-sm font-medium text-primary underline underline-offset-4"
-            >
-              What to do in the first hour of a claim
-            </Link>
-          </div>
+        <div className="mx-auto max-w-[1200px] px-4 py-12 md:px-6">
+          <h2 className="text-2xl font-bold tracking-[-0.03em]">
+            Buy insurance at Bima Hub
+          </h2>
+          <p className="mt-3 max-w-[72ch] leading-relaxed text-muted-foreground">
+            Based in Mumbai, Bima Hub helps Indian buyers compare and place motor,
+            health, life including LIC, and shop or home cover. You get plan
+            features, exclusions, and a premium range in a few steps from home. We
+            are paid a commission by the insurer. You do not pay a separate advice
+            fee. For claims, call the desk that placed the policy.
+          </p>
+          <Link
+            href="/about"
+            className="mt-4 inline-block text-sm font-semibold text-brand underline underline-offset-4"
+          >
+            About the desk
+          </Link>
         </div>
       </section>
     </>

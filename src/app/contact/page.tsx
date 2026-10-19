@@ -24,7 +24,7 @@ const NEXT = [
 
 export default function ContactPage() {
   return (
-    <section className="bg-background pt-24">
+    <section className="bg-background pt-10">
       <div className="mx-auto max-w-[760px] px-4 pt-6 pb-20 md:px-6 md:pt-10 md:pb-28">
         <h1 className="text-[clamp(2.25rem,4vw,3.4rem)] leading-[1.08] font-semibold tracking-[-0.03em]">
           Get a free quote

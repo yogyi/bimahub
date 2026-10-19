@@ -1,13 +1,13 @@
 import Link from "next/link";
 
 const LINKS = [
-  { href: "/motor", label: "Motor" },
+  { href: "/life", label: "Term & LIC" },
   { href: "/health", label: "Health" },
-  { href: "/life", label: "Life & LIC" },
+  { href: "/motor", label: "Car & bike" },
   { href: "/non-motor", label: "Shop & home" },
   { href: "/claims", label: "Claims" },
   { href: "/about", label: "About" },
-  { href: "/#calculator", label: "Calculator" },
+  { href: "/#calculator", label: "Calculators" },
 ];
 
 export function SiteFooter() {
@@ -15,10 +15,10 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-navy text-foam">
       <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-14 md:grid-cols-12 md:px-6">
         <div className="md:col-span-5">
-          <p className="text-lg font-semibold tracking-[-0.03em]">Bima Hub</p>
+          <p className="text-lg font-bold tracking-[-0.03em]">Bima Hub</p>
           <p className="mt-3 max-w-[36ch] text-sm leading-relaxed text-foam/75">
-            Motor, health, life including LIC, and shop or home cover for families
-            and small businesses across India.
+            Compare and buy motor, health, life including LIC, and shop or home
+            insurance in India.
           </p>
           <p className="mt-4 text-sm">
             <a href="tel:+919876543210" className="underline-offset-4 hover:underline">

@@ -33,7 +33,7 @@ const GROUPS = [
 export default function LifePage() {
   return (
     <>
-      <section className="bg-background pt-24">
+      <section className="bg-background pt-10">
         <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-4 pb-16 md:grid-cols-12 md:px-6 md:pb-20">
           <div className="order-2 md:order-1 md:col-span-5">
             <Photo

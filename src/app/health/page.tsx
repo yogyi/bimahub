@@ -34,7 +34,7 @@ const READS = [
 export default function HealthPage() {
   return (
     <>
-      <section className="bg-background pt-24">
+      <section className="bg-background pt-10">
         <div className="mx-auto max-w-[1400px] px-4 pb-10 md:px-6 md:pb-14">
           <h1 className="max-w-3xl text-[clamp(2.25rem,4vw,3.4rem)] leading-[1.08] font-medium tracking-[-0.03em]">
             Read the room-rent line before the premium.

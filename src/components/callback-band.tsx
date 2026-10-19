@@ -18,13 +18,7 @@ export function CallbackBand({
             Tell us the cover. A Bima Hub advisor calls on a weekday before 7 pm.
           </p>
         </div>
-        <Link
-          href="/contact"
-          className={cn(
-            buttonVariants(),
-            "bg-accent text-accent-foreground hover:bg-accent/90",
-          )}
-        >
+        <Link href="/contact" className={cn(buttonVariants())}>
           Get a quote
         </Link>
       </div>

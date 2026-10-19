@@ -266,7 +266,7 @@ export function PremiumCalculator() {
         <div>
           <p className="text-sm text-foam/75">Estimated yearly premium</p>
           <p className="mt-2 text-3xl font-semibold tracking-[-0.03em] md:text-4xl">
-            {formatInr(estimate.yearlyLow)} – {formatInr(estimate.yearlyHigh)}
+            {formatInr(estimate.yearlyLow)} to {formatInr(estimate.yearlyHigh)}
           </p>
           <p className="mt-2 text-sm text-foam/75">
             About {formatInr(estimate.monthlyLow)} to {formatInr(estimate.monthlyHigh)} a
@@ -279,13 +279,7 @@ export function PremiumCalculator() {
             ))}
           </ul>
         </div>
-        <Link
-          href="/#quote"
-          className={cn(
-            buttonVariants(),
-            "mt-8 w-fit bg-accent text-accent-foreground hover:bg-accent/90",
-          )}
-        >
+        <Link href="/#quote" className={cn(buttonVariants(), "mt-8 w-fit")}>
           Get a quote on this range
         </Link>
       </div>

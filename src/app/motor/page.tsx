@@ -73,7 +73,7 @@ const GROUPS = [
 export default function MotorPage() {
   return (
     <>
-      <section className="bg-background pt-24">
+      <section className="bg-background pt-10">
         <div className="mx-auto grid max-w-[1400px] items-end gap-8 px-4 pb-12 md:grid-cols-12 md:px-6 md:pb-16">
           <div className="md:col-span-5">
             <h1 className="text-[clamp(2.25rem,4vw,3.4rem)] leading-[1.08] font-medium tracking-[-0.03em]">
