@@ -87,7 +87,7 @@ export default function NonMotorPage() {
         </div>
       </section>
 
-      <section className="bg-pine text-foam">
+      <section className="bg-navy text-foam">
         <div className="mx-auto max-w-[1400px] px-4 py-16 md:px-6 md:py-20">
           <h2 className="max-w-3xl text-3xl tracking-[-0.03em] md:text-4xl">
             A home is a building plus what is inside it.

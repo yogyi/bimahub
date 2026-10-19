@@ -1,8 +1,8 @@
-# Straightline Advisors
+# Bima Hub
 
-A multi-line insurance desk website: motor, non-motor, health, and life, including LIC plans. One advisor story, one callback, and the wording explained before the premium.
+An Indian insurance landing site for motor, health, life including LIC, and shop or home cover. Inspired by premium insurance LPs: hero quote form, cover grid, premium calculator, reviews, FAQ, and a full get-a-quote section.
 
-This is a working preview. Callback requests are validated and saved to `data/callbacks.ndjson` on the machine running the site. They are not emailed or texted. Replace the phone, email, address, and advisor names before you publish, and connect the form to your own inbox.
+This is a working preview. Quote requests are validated and saved to `data/callbacks.ndjson` on the machine running the site. They are not emailed or texted. The calculator shows planning ranges only. Replace phone, email, and address before you publish, and connect the form to your own inbox.
 
 ## Run locally
 
@@ -20,9 +20,9 @@ npm run build
 
 ## What you can click through
 
-- Home: the four covers, how a policy is placed, a year with the desk, the insurer panel, questions, and the callback form
-- Motor, non-motor, health, and life (LIC plans called out by name)
-- Claims: the first hour for a crash, an admission, and a shop or house
-- About and the callback page
+- Home: hero quote form, covers, insurance premium calculator, about, reviews, FAQ, and get-a-quote panel
+- Motor, health, life (LIC), shop and home detail pages
+- Claims and about
+- Contact quote form
 
 Light and dark follow the system theme. A control in the header switches them.

@@ -18,7 +18,13 @@ const empty = {
   note: "",
 };
 
-export function CallbackForm() {
+export function CallbackForm({
+  compact = false,
+  submitLabel = "Get a quote",
+}: {
+  compact?: boolean;
+  submitLabel?: string;
+}) {
   const [fields, setFields] = useState(empty);
   const [errors, setErrors] = useState<CallbackErrors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -75,67 +81,68 @@ export function CallbackForm() {
   if (status === "sent") {
     return (
       <div role="status" className="flex flex-col gap-4">
-        <h3 className="text-2xl tracking-[-0.03em]">Received.</h3>
+        <h3 className="text-2xl tracking-[-0.03em]">Quote request received.</h3>
         <p className="max-w-[48ch] leading-relaxed text-muted-foreground">
-          The note is saved with this preview. On a published desk, this becomes
-          a weekday call before 7 pm.
+          The note is saved with this preview. On a published desk, a Bima Hub
+          advisor calls on a weekday before 7 pm.
         </p>
         <Button type="button" className="w-fit" onClick={() => setStatus("idle")}>
-          Write another note
+          Send another request
         </Button>
       </div>
     );
   }
 
   return (
-    <form className="flex flex-col gap-5" action={submitAction} noValidate aria-busy={status === "sending"}>
-      <div className="flex flex-col gap-2">
-        <Label htmlFor="callback-name">Name</Label>
-        <Input
-          id="callback-name"
-          name="name"
-          autoComplete="name"
-          value={fields.name}
-          onChange={(event) => update("name", event.target.value)}
-          aria-invalid={Boolean(errors.name)}
-          aria-describedby="callback-name-help callback-name-error"
-          className={fieldClass}
-        />
-        <p id="callback-name-help" className="text-sm text-muted-foreground">
-          The person we should ask for.
-        </p>
-        {errors.name ? (
-          <p id="callback-name-error" className="text-sm text-destructive">
-            {errors.name}
-          </p>
-        ) : null}
+    <form
+      className="flex flex-col gap-4"
+      action={submitAction}
+      noValidate
+      aria-busy={status === "sending"}
+    >
+      <div className={compact ? "grid gap-4 sm:grid-cols-2" : "flex flex-col gap-4"}>
+        <div className="flex flex-col gap-2">
+          <Label htmlFor="callback-name">Name</Label>
+          <Input
+            id="callback-name"
+            name="name"
+            autoComplete="name"
+            value={fields.name}
+            onChange={(event) => update("name", event.target.value)}
+            aria-invalid={Boolean(errors.name)}
+            aria-describedby="callback-name-error"
+            className={fieldClass}
+          />
+          {errors.name ? (
+            <p id="callback-name-error" className="text-sm text-destructive">
+              {errors.name}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <Label htmlFor="callback-mobile">Mobile</Label>
+          <Input
+            id="callback-mobile"
+            name="mobile"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            value={fields.mobile}
+            onChange={(event) => update("mobile", event.target.value)}
+            aria-invalid={Boolean(errors.mobile)}
+            aria-describedby="callback-mobile-error"
+            className={fieldClass}
+          />
+          {errors.mobile ? (
+            <p id="callback-mobile-error" className="text-sm text-destructive">
+              {errors.mobile}
+            </p>
+          ) : null}
+        </div>
       </div>
 
-      <div className="flex flex-col gap-2">
-        <Label htmlFor="callback-mobile">Mobile</Label>
-        <Input
-          id="callback-mobile"
-          name="mobile"
-          type="tel"
-          inputMode="tel"
-          autoComplete="tel"
-          value={fields.mobile}
-          onChange={(event) => update("mobile", event.target.value)}
-          aria-invalid={Boolean(errors.mobile)}
-          aria-describedby="callback-mobile-help callback-mobile-error"
-          className={fieldClass}
-        />
-        <p id="callback-mobile-help" className="text-sm text-muted-foreground">
-          Ten digits, or with +91.
-        </p>
-        {errors.mobile ? (
-          <p id="callback-mobile-error" className="text-sm text-destructive">
-            {errors.mobile}
-          </p>
-        ) : null}
-      </div>
-
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <Label htmlFor="callback-city">City</Label>
           <Input
@@ -145,12 +152,9 @@ export function CallbackForm() {
             value={fields.city}
             onChange={(event) => update("city", event.target.value)}
             aria-invalid={Boolean(errors.city)}
-            aria-describedby="callback-city-help callback-city-error"
+            aria-describedby="callback-city-error"
             className={fieldClass}
           />
-          <p id="callback-city-help" className="text-sm text-muted-foreground">
-            Where the vehicle, shop, or family is.
-          </p>
           {errors.city ? (
             <p id="callback-city-error" className="text-sm text-destructive">
               {errors.city}
@@ -184,27 +188,28 @@ export function CallbackForm() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2">
-        <Label htmlFor="callback-note">Note</Label>
-        <Textarea
-          id="callback-note"
-          name="note"
-          rows={4}
-          value={fields.note}
-          onChange={(event) => update("note", event.target.value)}
-          aria-invalid={Boolean(errors.note)}
-          aria-describedby="callback-note-help callback-note-error"
-          className="min-h-28 rounded-[12px] px-3 py-3 text-base md:text-base"
-        />
-        <p id="callback-note-help" className="text-sm text-muted-foreground">
-          Optional. A vehicle number, a hospital, or the plan you already hold.
-        </p>
-        {errors.note ? (
-          <p id="callback-note-error" className="text-sm text-destructive">
-            {errors.note}
-          </p>
-        ) : null}
-      </div>
+      {!compact ? (
+        <div className="flex flex-col gap-2">
+          <Label htmlFor="callback-note">Message</Label>
+          <Textarea
+            id="callback-note"
+            name="note"
+            rows={4}
+            value={fields.note}
+            onChange={(event) => update("note", event.target.value)}
+            aria-invalid={Boolean(errors.note)}
+            aria-describedby="callback-note-error"
+            className="min-h-28 rounded-[12px] px-3 py-3 text-base md:text-base"
+          />
+          {errors.note ? (
+            <p id="callback-note-error" className="text-sm text-destructive">
+              {errors.note}
+            </p>
+          ) : null}
+        </div>
+      ) : (
+        <input type="hidden" name="note" value={fields.note} />
+      )}
 
       {errors.form ? (
         <p role="alert" className="text-sm text-destructive">
@@ -212,13 +217,12 @@ export function CallbackForm() {
         </p>
       ) : null}
 
-      <div className="flex flex-col items-start gap-3">
-        <Button type="submit" disabled={status === "sending"}>
-          {status === "sending" ? "Sending" : "Request a callback"}
+      <div className="flex flex-col items-start gap-3 pt-1">
+        <Button type="submit" disabled={status === "sending"} className="w-full sm:w-auto">
+          {status === "sending" ? "Sending" : submitLabel}
         </Button>
         <p className="max-w-[48ch] text-sm leading-relaxed text-muted-foreground">
-          This preview stores the request on the server. It is not sent to a
-          phone yet.
+          Preview stores the request on this server. It is not sent to a phone yet.
         </p>
       </div>
     </form>

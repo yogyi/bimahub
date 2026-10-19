@@ -1,8 +1,8 @@
 export const COVER_OPTIONS = [
   { value: "motor", label: "Motor" },
-  { value: "non-motor", label: "Non-motor" },
+  { value: "non-motor", label: "Shop & home" },
   { value: "health", label: "Health" },
-  { value: "life", label: "Life, including LIC" },
+  { value: "life", label: "Life & LIC" },
   { value: "unsure", label: "Not sure yet" },
 ] as const;
 

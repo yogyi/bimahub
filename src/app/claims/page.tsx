@@ -53,7 +53,7 @@ export default function ClaimsPage() {
         <div className="mx-auto max-w-[1400px] px-4 md:px-6">
           <Photo
             src="/images/claims-desk.jpg"
-            alt="Meera Kulkarni on a landline at the Straightline desk, taking notes."
+            alt="Bima Hub advisor on a landline at the desk, taking notes."
             ratio="aspect-[16/8]"
             sizes="(min-width: 768px) 90vw, 100vw"
           />
@@ -112,7 +112,7 @@ export default function ClaimsPage() {
         </div>
       </section>
 
-      <section className="bg-pine text-foam">
+      <section className="bg-navy text-foam">
         <div className="mx-auto grid max-w-[1400px] gap-8 px-4 py-16 md:grid-cols-12 md:px-6">
           <div className="md:col-span-6">
             <h2 className="text-3xl tracking-[-0.03em]">A shop or a house</h2>

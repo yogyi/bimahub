@@ -3,24 +3,29 @@ import { cn } from "cn";
 import { buttonVariants } from "@/components/ui/button";
 
 export function CallbackBand({
-  title = "Tell us what needs cover.",
+  title = "Ready for a clear quote?",
 }: {
   title?: string;
 }) {
   return (
-    <section className="bg-pine text-foam">
-      <div className="mx-auto flex max-w-[1400px] flex-col items-start gap-6 px-4 py-14 md:flex-row md:items-end md:justify-between md:px-6 md:py-16">
-        <h2 className="max-w-[16ch] text-3xl leading-[1.1] tracking-[-0.03em] md:text-4xl">
-          {title}
-        </h2>
+    <section className="bg-navy text-foam">
+      <div className="mx-auto flex max-w-[1200px] flex-col items-start gap-6 px-4 py-14 md:flex-row md:items-end md:justify-between md:px-6 md:py-16">
+        <div>
+          <h2 className="max-w-[18ch] text-3xl leading-[1.1] tracking-[-0.03em] md:text-4xl">
+            {title}
+          </h2>
+          <p className="mt-3 max-w-[40ch] text-foam/75">
+            Tell us the cover. A Bima Hub advisor calls on a weekday before 7 pm.
+          </p>
+        </div>
         <Link
           href="/contact"
           className={cn(
             buttonVariants(),
-            "bg-foam text-pine-deep hover:bg-foam/90 dark:bg-foam dark:text-pine-deep dark:hover:bg-foam/90",
+            "bg-accent text-accent-foreground hover:bg-accent/90",
           )}
         >
-          Request a callback
+          Get a quote
         </Link>
       </div>
     </section>
