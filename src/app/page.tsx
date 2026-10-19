@@ -7,6 +7,12 @@ import {
 } from "@/components/ui/accordion";
 import { buttonVariants } from "@/components/ui/button";
 import { CallbackForm } from "@/components/callback-form";
+import {
+  FavouritesSection,
+  GuideSection,
+  PhoneSection,
+  SupportSection,
+} from "@/components/home-extras";
 import { Photo } from "@/components/photo";
 import { PremiumCalculator } from "@/components/premium-calculator";
 import {
@@ -26,7 +32,6 @@ import {
   CurrencyInr,
   Handshake,
   PhoneCall,
-  SealCheck,
   UsersThree,
 } from "@phosphor-icons/react/ssr";
 
@@ -113,29 +118,6 @@ const TRUST = [
     icon: PhoneCall,
     title: "Claims help built in",
     body: "The same desk that placed the policy helps with intimation and papers.",
-  },
-] as const;
-
-const ADVANTAGE = [
-  {
-    title: "One of the clearer prices",
-    body: "We compare limits before we chase the cheapest screenshot.",
-  },
-  {
-    title: "Advice that keeps you first",
-    body: "If a term plan pays us less and protects the family better, we say that.",
-  },
-  {
-    title: "Placed with registered insurers",
-    body: "Registration details are shared before you sign. We do not invent a licence number on this page.",
-  },
-  {
-    title: "Claims support",
-    body: "Surveyor, pre-authorisation, and papers. The insurer still decides.",
-  },
-  {
-    title: "Happy to help",
-    body: "Weekday calls before 7 pm. Mumbai desk, India-wide by phone and video.",
   },
 ] as const;
 
@@ -392,32 +374,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Advantage */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-[1200px] px-4 py-14 md:px-6 md:py-16">
-          <h2 className="text-center text-3xl font-bold tracking-[-0.03em] md:text-4xl">
-            Bima Hub advantage
-          </h2>
-          <p className="mx-auto mt-3 max-w-[48ch] text-center text-muted-foreground">
-            When you place cover with us, you get more than a PDF. You get a desk
-            that still answers.
-          </p>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {ADVANTAGE.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-[14px] border border-border bg-card p-4"
-              >
-                <SealCheck weight="fill" className="size-6 text-primary" />
-                <h3 className="mt-3 text-base font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {item.body}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FavouritesSection />
+
+      <GuideSection />
+
+      <PhoneSection />
 
       {/* Reviews */}
       <section id="reviews" className="scroll-mt-24 bg-sky/40 dark:bg-muted/40">
@@ -450,7 +411,7 @@ export default function HomePage() {
       </section>
 
       {/* Partners */}
-      <section className="bg-background">
+      <section id="partners" className="scroll-mt-24 bg-background">
         <div className="mx-auto max-w-[1200px] px-4 py-14 md:px-6">
           <h2 className="text-center text-3xl font-bold tracking-[-0.03em]">
             Our partners
@@ -472,7 +433,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Help + quote */}
+      <SupportSection />
+
+      {/* Quote form */}
       <section
         id="quote"
         className="scroll-mt-24 bg-[linear-gradient(145deg,oklch(0.26_0.07_265),oklch(0.32_0.09_250)_45%,oklch(0.4_0.12_45/0.55))]"
