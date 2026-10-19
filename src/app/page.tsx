@@ -7,23 +7,27 @@ import {
 } from "@/components/ui/accordion";
 import { buttonVariants } from "@/components/ui/button";
 import { CallbackForm } from "@/components/callback-form";
+import { Photo } from "@/components/photo";
 import { PremiumCalculator } from "@/components/premium-calculator";
+import {
+  GlyphBike,
+  GlyphCalc,
+  GlyphCar,
+  GlyphCommercial,
+  GlyphHealth,
+  GlyphLic,
+  GlyphPension,
+  GlyphShop,
+  GlyphTerm,
+  GlyphTopup,
+} from "@/components/product-glyphs";
 import { cn } from "cn";
 import {
-  Bicycle,
-  Buildings,
-  Car,
   CurrencyInr,
-  FirstAidKit,
   Handshake,
-  Heart,
-  IdentificationCard,
   PhoneCall,
   SealCheck,
-  ShieldCheck,
-  Storefront,
   UsersThree,
-  Wallet,
 } from "@phosphor-icons/react/ssr";
 
 const PRODUCTS = [
@@ -31,85 +35,61 @@ const PRODUCTS = [
     href: "/life",
     title: "Term life",
     hint: "High cover, low premium",
-    icon: IdentificationCard,
+    Glyph: GlyphTerm,
   },
   {
     href: "/health",
     title: "Health",
     hint: "Family & senior plans",
-    icon: FirstAidKit,
+    Glyph: GlyphHealth,
   },
   {
     href: "/motor",
     title: "Car",
     hint: "OD + third party",
-    icon: Car,
+    Glyph: GlyphCar,
   },
   {
     href: "/motor",
     title: "Bike",
     hint: "Two-wheeler cover",
-    icon: Bicycle,
+    Glyph: GlyphBike,
   },
   {
     href: "/life",
     title: "LIC plans",
     hint: "Anand, Labh, Umang",
-    icon: Heart,
+    Glyph: GlyphLic,
   },
   {
     href: "/non-motor",
     title: "Shop & home",
     hint: "Fire, stock, liability",
-    icon: Storefront,
+    Glyph: GlyphShop,
   },
   {
     href: "/health",
     title: "Super top-up",
     hint: "Extra hospital cover",
-    icon: ShieldCheck,
+    Glyph: GlyphTopup,
   },
   {
     href: "/life",
     title: "Pension",
     hint: "Jeevan Shanti & more",
-    icon: Wallet,
+    Glyph: GlyphPension,
   },
   {
     href: "/motor",
     title: "Commercial",
     hint: "Goods & passenger",
-    icon: Buildings,
+    Glyph: GlyphCommercial,
   },
   {
     href: "/#calculator",
     title: "Calculators",
     hint: "Motor, health, term",
-    icon: CurrencyInr,
-  },
-] as const;
-
-const PROMOS = [
-  {
-    title: "Term cover for the income that keeps the house",
-    body: "Compare Tech Term and private term plans. We start from who depends on you, not from a plan name.",
-    href: "/life",
-    cta: "View term life",
-    tone: "bg-brand text-white",
-  },
-  {
-    title: "Health plans read for room rent first",
-    body: "Family floaters and senior cover. A cheap premium with a tight room cap often costs more in hospital.",
-    href: "/health",
-    cta: "View health",
-    tone: "bg-sky text-foreground",
-  },
-  {
-    title: "Motor renewal without losing NCB by mistake",
-    body: "Bring the previous policy. We set IDV and check whether a small claim is worth the bonus it removes.",
-    href: "/motor",
-    cta: "View motor",
-    tone: "bg-navy text-foam",
+    Glyph: GlyphCalc,
   },
 ] as const;
 
@@ -219,28 +199,94 @@ const QUESTIONS = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero: product hub + promos, Policybazaar-style marketplace */}
-      <section className="bg-[linear-gradient(180deg,oklch(0.96_0.03_240),oklch(0.99_0.005_250)_55%)] dark:bg-none dark:bg-background">
-        <div className="mx-auto grid max-w-[1200px] gap-8 px-4 py-10 md:grid-cols-12 md:px-6 md:py-14">
-          <div className="rise md:col-span-7">
-            <h1 className="text-[clamp(1.85rem,3.5vw,2.75rem)] font-bold leading-[1.15] tracking-[-0.03em] text-foreground">
-              Let&apos;s find you the{" "}
-              <span className="text-brand">best insurance</span> in India
-            </h1>
-            <p className="mt-3 max-w-[46ch] text-base leading-relaxed text-muted-foreground md:text-lg">
-              Compare term, health, motor, LIC, and shop or home cover. Get a
-              quote from Bima Hub without the jargon trap.
-            </p>
+      {/* Unique hero: colourful product glyphs + warm story panel */}
+      <section className="hero-stage relative overflow-hidden">
+        <div className="mx-auto max-w-[1200px] px-4 pt-8 pb-6 md:px-6 md:pt-10">
+          <div className="rise grid items-center gap-8 md:grid-cols-12">
+            <div className="md:col-span-6">
+              <p className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold tracking-wide text-brand shadow-sm dark:bg-card">
+                <span className="size-1.5 rounded-full bg-primary" aria-hidden />
+                Made for Indian families &amp; shops
+              </p>
+              <h1 className="mt-4 text-[clamp(2.1rem,4.2vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.035em] text-foreground">
+                Bima that feels{" "}
+                <span className="text-primary">personal</span>, not like a portal maze
+              </h1>
+              <p className="mt-4 max-w-[40ch] text-base leading-relaxed text-muted-foreground md:text-lg">
+                Tap a colourful cover below. Compare term, health, motor, LIC, and
+                shop plans with a desk that still picks up.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link href="/#quote" className={buttonVariants()}>
+                  Get a free quote
+                </Link>
+                <Link
+                  href="/#calculator"
+                  className={buttonVariants({ variant: "outline" })}
+                >
+                  Check premium
+                </Link>
+              </div>
+            </div>
 
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
+            <div className="relative md:col-span-6">
+              <div className="relative overflow-hidden rounded-[24px] shadow-[0_28px_60px_-28px_oklch(0.35_0.1_45/0.45)]">
+                <Photo
+                  src="/images/hero-table.jpg"
+                  alt="Advisor explaining cover to a family at the dining table."
+                  ratio="aspect-[16/11]"
+                  priority
+                  sizes="(min-width: 768px) 45vw, 100vw"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/85 to-transparent p-5 pt-16">
+                  <p className="text-sm font-semibold text-white">
+                    One desk from quote to claim
+                  </p>
+                  <p className="mt-1 text-xs text-white/80">
+                    Mumbai-based. India-wide by call.
+                  </p>
+                </div>
+              </div>
+              <div className="float-a absolute -top-3 -left-2 hidden size-14 rounded-full shadow-lg md:block">
+                <GlyphHealth />
+              </div>
+              <div className="float-b absolute -right-2 top-10 hidden size-14 rounded-full shadow-lg md:block">
+                <GlyphCar />
+              </div>
+              <div className="float-a absolute right-8 -bottom-4 hidden size-12 rounded-full shadow-lg md:block">
+                <GlyphLic />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-[1200px] px-4 pb-12 md:px-6 md:pb-16">
+          <div className="rounded-[28px] border border-white/70 bg-white/75 p-4 shadow-[0_20px_50px_-30px_oklch(0.35_0.08_250/0.4)] backdrop-blur-md dark:border-border dark:bg-card/90 md:p-6">
+            <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h2 className="text-lg font-bold tracking-[-0.02em] text-foreground md:text-xl">
+                  What do you want to protect today?
+                </h2>
+                <p className="text-sm text-muted-foreground">
+                  Bright icons, clear covers. Pick one to explore.
+                </p>
+              </div>
+              <Link
+                href="/#quote"
+                className="text-sm font-semibold text-primary underline-offset-4 hover:underline"
+              >
+                Not sure? Ask us
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
               {PRODUCTS.map((item) => (
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="product-tile flex flex-col items-center rounded-[14px] border border-border bg-card px-2 py-4 text-center"
+                  className="product-tile group flex flex-col items-center rounded-[18px] border border-border/80 bg-card px-2 py-4 text-center"
                 >
-                  <span className="flex size-12 items-center justify-center rounded-full bg-sky text-brand">
-                    <item.icon weight="duotone" className="size-6" />
+                  <span className="glyph size-14 drop-shadow-sm md:size-16">
+                    <item.Glyph />
                   </span>
                   <span className="mt-3 text-sm font-semibold text-foreground">
                     {item.title}
@@ -251,38 +297,6 @@ export default function HomePage() {
                 </Link>
               ))}
             </div>
-
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/#quote" className={buttonVariants()}>
-                Get a free quote
-              </Link>
-              <Link
-                href="/#calculator"
-                className={buttonVariants({ variant: "outline" })}
-              >
-                Check premium
-              </Link>
-            </div>
-          </div>
-
-          <div className="rise rise-delay flex flex-col gap-3 md:col-span-5">
-            {PROMOS.map((promo) => (
-              <article
-                key={promo.title}
-                className={cn("rounded-[16px] p-5", promo.tone)}
-              >
-                <h2 className="text-lg font-semibold leading-snug tracking-[-0.02em]">
-                  {promo.title}
-                </h2>
-                <p className="mt-2 text-sm leading-relaxed opacity-90">{promo.body}</p>
-                <Link
-                  href={promo.href}
-                  className="mt-4 inline-flex text-sm font-semibold underline underline-offset-4"
-                >
-                  {promo.cta}
-                </Link>
-              </article>
-            ))}
           </div>
         </div>
       </section>
