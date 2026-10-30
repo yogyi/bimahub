@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-background pt-10">
+      <section className="bg-background pt-28">
         <div className="mx-auto grid max-w-[1200px] items-start gap-10 px-4 pb-16 md:grid-cols-12 md:px-6 md:pb-24">
           <div className="order-2 md:order-1 md:col-span-5">
             <Photo

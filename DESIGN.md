@@ -1,18 +1,25 @@
-# Bima Hub design
+# BimaHub design
 
-Homepage follows an Indian insurance marketplace pattern: sticky top bar, product icon grid, promo cards, trust strip, calculators, advantage, reviews, partners, and quote desk.
+Adapted from the Sovereign Trust / OmniShield Stitch pack. Brand name is **BimaHub**.
 
 ## Colour
 
-- Orange primary for Get a quote actions
-- Blue brand for logo, icons, and emphasis
-- Navy for dark help/quote bands
-- Cool white stage background
+- Primary navy `#00091F` / container `#0B2042` for headers, dark bands, footer
+- Secondary electric blue `#0051D5` for primary CTAs and active states
+- Tertiary emerald `#159B6E` for verification and savings
+- Amber `#F59E0B` for advisory tags
+- Surface `#F8F9FF` with white elevated cards and `#E2E8F0`-like outline borders
 
 ## Type
 
-Plus Jakarta Sans. Bold display on the home hub. No serif, no gradient text.
+Inter across the product. Tabular figures for premiums and ratios. Material Symbols Outlined for iconography from the design pack.
 
 ## Shape
 
-Pill buttons. Soft 12 to 16px radius on product tiles and forms. Sticky full-width header (not floating pill).
+- Controls and badges: `0.5rem`
+- Comparison cards and product tiles: `rounded-xl` (`1.5rem`)
+- Trust chips: full pill
+
+## Partners / underwriters
+
+Preview underwriter rows use **example.com** placeholder brands. LIC remains a product line, not a claimed partner logo strip.

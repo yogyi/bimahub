@@ -33,7 +33,7 @@ const NEXT = [
 
 export default function ContactPage() {
   return (
-    <section className="bg-[linear-gradient(180deg,oklch(0.96_0.03_240),oklch(0.99_0.005_250)_40%)] dark:bg-none dark:bg-background pt-10">
+    <section className="bg-[linear-gradient(180deg,#eff4ff,#f8f9ff_40%)] pt-28">
       <div className="mx-auto grid max-w-[1100px] gap-8 px-4 pt-4 pb-20 md:grid-cols-12 md:px-6 md:pt-8 md:pb-28">
         <div className="md:col-span-5 md:pt-4">
           <p className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">

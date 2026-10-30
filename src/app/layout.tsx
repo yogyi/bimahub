@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { Geist_Mono, Inter } from "next/font/google";
 import { Providers } from "@/components/providers";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
+import { SiteFooterDesign } from "@/components/design/site-footer-design";
+import { SiteHeaderDesign } from "@/components/design/site-header-design";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const geistMono = Geist_Mono({
@@ -19,11 +19,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://bimahub.example"),
   title: {
-    default: "Bima Hub | Insurance for Indian families and businesses",
-    template: "%s | Bima Hub",
+    default: "BimaHub | Compare 50+ Insurers & Save on Premiums",
+    template: "%s | BimaHub",
   },
   description:
-    "Compare and buy motor, health, life including LIC, and shop or home insurance in India. Premium calculator and free quote from Bima Hub.",
+    "India's insurance comparison hub for motor, health, life including LIC, and shop or home cover. Instant quotes, claim support, and IRDAI-aware guidance.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -31,21 +31,27 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en-IN"
       suppressHydrationWarning
-      className={`${jakarta.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-[100dvh] flex-col">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+        />
+      </head>
+      <body className="flex min-h-[100dvh] flex-col bg-surface text-on-surface">
         <Providers>
           <a
             href="#content"
-            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[70] focus:rounded-full focus:bg-background focus:px-4 focus:py-2 focus:text-foreground"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[70] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-on-surface"
           >
             Skip to content
           </a>
-          <SiteHeader />
-          <main id="content" className="flex-1 pt-0">
+          <SiteHeaderDesign />
+          <main id="content" className="flex-1">
             {children}
           </main>
-          <SiteFooter />
+          <SiteFooterDesign />
         </Providers>
       </body>
     </html>

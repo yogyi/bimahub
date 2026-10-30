@@ -1,8 +1,6 @@
-# Bima Hub
+# BimaHub
 
-An Indian insurance marketplace-style website for comparing and requesting quotes on motor, health, life including LIC, and shop or home cover. Homepage layout is inspired by popular Indian insurance portals: product icon hub, trust strip, calculators, advantage band, reviews, partners, and a get-a-quote desk.
-
-This is a working preview. Quote requests are validated and saved to `data/callbacks.ndjson`. They are not emailed. The premium calculator shows planning ranges only. Replace phone, email, and address before you publish.
+Indian insurance comparison website for motor, health, life including LIC, claims assistance, and quote requests. UI follows the uploaded Stitch design pack (Sovereign Trust tokens, BimaHub branding).
 
 ## Run locally
 
@@ -11,19 +9,19 @@ npm install
 npm run dev
 ```
 
-Dev server: [http://127.0.0.1:4317](http://127.0.0.1:4317)
+Open [http://127.0.0.1:4317](http://127.0.0.1:4317).
 
-```bash
-npm run lint
-npm run build
-```
+## Routes
 
-## Homepage sections
+- `/` Home comparison hub
+- `/motor` Car and bike quotes
+- `/health` Family and individual health
+- `/life` LIC and term / savings
+- `/claims` Claim tracking and support
+- `/contact` Quote / callback desk
+- `/about` About the desk
 
-- Product tiles: term, health, car, bike, LIC, shop and home, top-up, pension, commercial, calculators
-- Trust strip and popular plans
-- Motor / health / term premium calculator
-- Bima Hub advantage, reviews, insurer partners
-- Help desk + free quote form
+## Notes
 
-Detail pages for each cover line, claims, about, and contact remain available.
+- Underwriter logos in the design are shown as **example.com** placeholders until real partner marks are supplied.
+- Quote form posts to `/api/callback` and can fall back to a local preview response.
