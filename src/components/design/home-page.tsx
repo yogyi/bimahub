@@ -1,6 +1,4 @@
 /* Auto-adapted from stitch design HTML */
-import { LiveDispatch } from "@/components/live-dispatch";
-
 export function DesignHomePage() {
   return (
 <div className="design-page w-full bg-surface pt-28"><section className="relative w-full overflow-hidden bg-gradient-to-b from-white via-surface-container-low/70 to-surface pb-16 pt-4 lg:pt-8" id="hero-section">
@@ -9,8 +7,6 @@ export function DesignHomePage() {
 <div className="absolute top-1/3 -right-24 w-[36rem] h-[36rem] rounded-full bg-sky-400/15 blur-3xl pointer-events-none"></div>
 <div className="absolute bottom-0 left-1/3 w-[28rem] h-[28rem] rounded-full bg-amber-400/10 blur-3xl pointer-events-none"></div>
 <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-
-<LiveDispatch tone="card" />
 
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 

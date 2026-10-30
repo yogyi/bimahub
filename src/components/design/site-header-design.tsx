@@ -34,14 +34,8 @@ export function SiteHeaderDesign() {
   return (
     <header className="fixed top-0 right-0 left-0 z-50 border-b border-outline-variant/50 bg-white/95 shadow-sm backdrop-blur-md">
       <div className="border-b border-primary-container bg-primary text-primary-foreground">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2 sm:px-8">
-          <LiveDispatch tone="header" />
-          <Link
-            href="/contact"
-            className="hidden shrink-0 font-semibold text-tertiary-fixed transition-colors hover:text-white sm:inline"
-          >
-            Request a callback
-          </Link>
+        <div className="mx-auto flex max-w-7xl items-center px-4 py-2.5 sm:px-8">
+          <LiveDispatch />
         </div>
       </div>
 

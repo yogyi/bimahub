@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | BimaHub",
   },
   description:
-    "India's insurance comparison hub for motor, health, life including LIC, and shop or home cover. Instant quotes, claim support, and IRDAI-aware guidance.",
+    "India's insurance comparison hub for motor, health, life including LIC, and shop or home cover. Instant quotes and claim support from BimaHub.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

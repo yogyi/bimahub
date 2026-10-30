@@ -11,11 +11,7 @@ const MESSAGES = [
   "23 claim advocates currently live on hospital & garage desks",
 ] as const;
 
-type LiveDispatchProps = {
-  tone?: "header" | "card";
-};
-
-export function LiveDispatch({ tone = "header" }: LiveDispatchProps) {
+export function LiveDispatch() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -25,39 +21,18 @@ export function LiveDispatch({ tone = "header" }: LiveDispatchProps) {
     return () => window.clearInterval(id);
   }, []);
 
-  if (tone === "card") {
-    return (
-      <div className="mb-8 flex flex-wrap items-center gap-3 rounded-2xl border border-outline-variant/40 bg-white px-4 py-2.5 shadow-sm">
-        <div className="flex min-w-0 flex-1 items-center gap-2.5 text-xs text-on-surface">
-          <span className="relative flex h-2.5 w-2.5 shrink-0">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-          </span>
-          <span className="shrink-0 font-bold text-secondary">LIVE DISPATCH:</span>
-          <span
-            key={index}
-            className="truncate font-medium text-slate-600 transition-opacity duration-300"
-          >
-            {MESSAGES[index]}
-          </span>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="flex min-w-0 flex-1 items-center gap-2 text-xs">
-      <span className="relative flex h-2 w-2 shrink-0">
+    <div className="flex min-w-0 flex-1 items-center gap-2.5 text-xs">
+      <span className="relative flex h-2.5 w-2.5 shrink-0">
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-        <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
       </span>
       <span className="shrink-0 font-bold tracking-wide text-emerald-300">
-        LIVE DISPATCH
+        LIVE DISPATCH:
       </span>
-      <span className="hidden text-white/30 sm:inline">·</span>
       <span
         key={index}
-        className="truncate font-medium text-slate-200 transition-opacity duration-300"
+        className="truncate font-medium text-slate-100 transition-opacity duration-300"
         aria-live="polite"
       >
         {MESSAGES[index]}
