@@ -17,14 +17,14 @@ const TABS: {
   href: string;
 }[] = [
   {
-    id: "motor",
-    label: "Motor",
-    icon: "directions_car",
-    image: "/images/design/motor-hero.jpg",
-    imageAlt: "Car and bike insurance on Indian roads",
-    badge: "Zero Dep & NCB Ready",
-    caption: "Compare private car and two-wheeler rates with cashless garages.",
-    href: "/motor",
+    id: "life",
+    label: "Life & LIC",
+    icon: "shield_person",
+    image: "/images/design/family-cover.png",
+    imageAlt: "Life cover and LIC savings for families",
+    badge: "Term + LIC Savings",
+    caption: "Pure term and LIC endowment options compared side by side.",
+    href: "/life",
   },
   {
     id: "health",
@@ -37,14 +37,14 @@ const TABS: {
     href: "/health",
   },
   {
-    id: "life",
-    label: "Life & LIC",
-    icon: "shield_person",
-    image: "/images/design/family-cover.png",
-    imageAlt: "Life cover and LIC savings for families",
-    badge: "Term + LIC Savings",
-    caption: "Pure term and LIC endowment options compared side by side.",
-    href: "/life",
+    id: "motor",
+    label: "Motor",
+    icon: "directions_car",
+    image: "/images/design/motor-hero.jpg",
+    imageAlt: "Car and bike insurance on Indian roads",
+    badge: "Zero Dep & NCB Ready",
+    caption: "Compare private car and two-wheeler rates with cashless garages.",
+    href: "/motor",
   },
   {
     id: "sme",
@@ -59,7 +59,7 @@ const TABS: {
 ];
 
 export function HeroQuoteForm() {
-  const [tab, setTab] = useState<TabId>("motor");
+  const [tab, setTab] = useState<TabId>("life");
   const [vehicle, setVehicle] = useState<"car" | "bike">("car");
   const active = TABS.find((item) => item.id === tab) ?? TABS[0];
 
