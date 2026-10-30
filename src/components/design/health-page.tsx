@@ -1,7 +1,7 @@
 /* Auto-adapted from stitch design HTML */
 export function DesignHealthPage() {
   return (
-<div className="design-page w-full bg-surface pt-28"><div className="pt-8"><div className="flex flex-col w-full">
+<div className="design-page w-full bg-surface pt-28 pb-24 md:pb-28"><div className="pt-8"><div className="flex flex-col w-full">
 
 <section className="relative w-full overflow-hidden bg-primary text-on-primary rounded-2xl shadow-xl mb-space-xl p-space-lg lg:p-space-xl">
 <div className="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-secondary/20 blur-3xl pointer-events-none"></div>
@@ -715,7 +715,7 @@ export function DesignHealthPage() {
 </div>
 </section>
 
-<aside className="sticky bottom-4 z-40 bg-primary/95 backdrop-blur-md text-on-primary rounded-xl p-space-md shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-space-md mx-space-xs">
+<aside className="fixed right-4 bottom-4 left-4 z-40 mx-0 flex flex-col items-center justify-between gap-space-md rounded-xl bg-primary/95 p-space-md text-on-primary shadow-2xl backdrop-blur-md sm:flex-row md:right-8 md:left-auto md:w-[min(420px,calc(100%-2rem))]">
 <div className="flex items-center gap-space-md">
 <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-on-secondary">
 <span className="material-symbols-outlined text-[22px]" aria-hidden="true">health_and_safety</span>

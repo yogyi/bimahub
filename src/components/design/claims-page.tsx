@@ -1,12 +1,12 @@
 /* Auto-adapted from stitch design HTML */
 export function DesignClaimsPage() {
   return (
-<div className="design-page w-full bg-surface pt-28"><div className="pt-8"><div className="flex flex-col w-full">
+<div className="design-page w-full bg-surface pt-28 pb-24 md:pb-28"><div className="pt-8"><div className="flex flex-col w-full">
 
 <section className="relative w-full bg-primary-container text-on-primary py-space-xl overflow-hidden shadow-md">
 <div className="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
 <div className="absolute left-1/3 -bottom-24 w-80 h-80 rounded-full bg-tertiary-fixed-dim/10 blur-3xl pointer-events-none"></div>
-<div className="max-w-7xl mx-auto px-margin relative z-10">
+<div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg mb-space-lg pb-space-lg">
 <div className="max-w-2xl">
 <div className="inline-flex items-center gap-space-xs bg-error-container text-on-error-container px-3 py-1 rounded-full text-label-sm font-label-sm mb-space-sm">
@@ -80,7 +80,7 @@ export function DesignClaimsPage() {
 
 <div className="h-16 bg-surface"></div>
 
-<section className="max-w-7xl mx-auto px-margin py-space-xl w-full">
+<section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-space-xl w-full">
 <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
 <div>
 <span className="text-label-sm font-label-sm text-secondary uppercase tracking-widest block mb-1">Standard Operating Procedure</span>
@@ -185,7 +185,7 @@ export function DesignClaimsPage() {
 </div>
 </section>
 
-<section className="max-w-7xl mx-auto px-margin py-space-lg w-full">
+<section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-space-lg w-full">
 <div className="bg-surface-container-lowest rounded-xl shadow-md p-space-lg lg:p-space-xl">
 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-md mb-space-lg">
 <div className="flex items-center gap-space-md">
@@ -284,7 +284,7 @@ export function DesignClaimsPage() {
 </div>
 </section>
 
-<section className="max-w-7xl mx-auto px-margin py-space-xl w-full">
+<section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-space-xl w-full">
 <div className="text-center max-w-3xl mx-auto mb-space-xl">
 <span className="text-label-sm font-label-sm text-secondary uppercase tracking-widest block mb-1">Tailored Protocol by Risk Category</span>
 <h2 className="font-headline-lg text-headline-lg text-primary tracking-tight">Dedicated Specialized Claim Portals</h2>
@@ -504,7 +504,7 @@ export function DesignClaimsPage() {
 </div>
 </section>
 
-<section className="max-w-7xl mx-auto px-margin py-space-xl w-full">
+<section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-space-xl w-full">
 <div className="bg-surface-container-low rounded-xl p-space-lg lg:p-space-xl">
 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg mb-space-xl">
 <div className="max-w-xl">
@@ -607,7 +607,7 @@ export function DesignClaimsPage() {
 </div>
 </section>
 
-<section className="max-w-7xl mx-auto px-margin py-space-xl w-full">
+<section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-space-xl w-full">
 <div className="bg-primary text-on-primary rounded-xl p-space-lg lg:p-space-xl relative overflow-hidden shadow-xl">
 <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none">
 <svg fill="currentColor" height="400" viewbox="0 0 200 200" width="400">

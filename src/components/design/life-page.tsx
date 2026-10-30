@@ -1,26 +1,9 @@
 /* Auto-adapted from stitch design HTML */
 export function DesignLifePage() {
   return (
-<div className="design-page w-full bg-surface pt-28"><div className="pt-8"><div className="flex flex-col w-full">
+<div className="design-page w-full bg-surface pt-28 pb-24 md:pb-28"><div className="pt-8"><div className="flex flex-col w-full">
 
-<div className="bg-primary text-on-primary py-2.5 px-margin">
-<div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-sm text-body-sm font-body-sm">
-<div className="flex items-center gap-space-md">
-<span className="inline-flex items-center gap-1.5 font-label-md text-label-md text-tertiary-fixed font-bold tracking-wide">
-<span className="material-symbols-outlined text-[17px]" aria-hidden="true" style={{ fontVariationSettings: "'FILL' 1" }}>assured_workload</span>
-          SECTION 37 STATUTORY SOVEREIGN BACKING
-        </span>
-<span className="text-on-primary-container hidden md:inline">|</span>
-<span className="text-on-primary-fixed-variant text-body-sm hidden md:inline">100% Capital &amp; Declared Bonus Guaranteed by Union Government of India</span>
-</div>
-<div className="flex items-center gap-space-sm text-label-sm font-label-sm">
-<span className="bg-primary-container text-tertiary-fixed px-2 py-0.5 rounded font-bold">FY2024 LIC CSR: 98.8%</span>
-<span className="text-on-primary-container">IRDAI DB-821 LIC Broker Portal</span>
-</div>
-</div>
-</div>
-
-<section className="max-w-7xl mx-auto w-full px-margin pt-space-lg pb-space-md">
+<section className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 pt-space-lg pb-space-md">
 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg mb-space-lg">
 <div className="max-w-2xl">
 <div className="inline-flex items-center gap-2 bg-surface-container text-secondary font-label-sm text-label-sm px-3 py-1 rounded-full mb-space-sm font-bold tracking-wider uppercase">
@@ -52,7 +35,7 @@ export function DesignLifePage() {
 </div>
 </section>
 
-<section className="max-w-7xl mx-auto w-full px-margin mb-space-xl">
+<section className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 mb-space-xl">
 <div className="bg-gradient-to-br from-primary via-primary-container to-primary rounded-xl text-on-primary p-space-lg lg:p-space-xl shadow-xl relative overflow-hidden">
 
 <div className="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-secondary-container opacity-20 blur-3xl pointer-events-none"></div>
@@ -177,7 +160,7 @@ export function DesignLifePage() {
 </div>
 </section>
 
-<section className="max-w-7xl mx-auto w-full px-margin mb-space-xl">
+<section className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 mb-space-xl">
 <div className="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-sm">
 <div>
 <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Actuarial Curations</span>
@@ -352,7 +335,7 @@ export function DesignLifePage() {
 </div>
 </section>
 
-<section className="max-w-7xl mx-auto w-full px-margin mb-space-xl">
+<section className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 mb-space-xl">
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center bg-surface-container rounded-xl p-space-lg overflow-hidden">
 <div className="lg:col-span-4 h-64 lg:h-72 rounded-lg overflow-hidden relative shadow-md">
 <img loading="lazy" className="w-full h-full object-cover" data-alt="A dignified multi-generational Indian family seated together in an architecturally refined sunlit contemporary Mumbai living room, conveying intergenerational wealth, financial confidence, security, and tranquility in warm ambient light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj0HmU4QSE4SUTDtq9MgExmoXIFfMokp1uKhxfDM26udira1NAAHL6Rh6K9fKgXpNrMnIFNg9oGfeWhT3rbX0z58NtxEK5VYC044qZgNT3PHXDYRvCjY5oGdo6Zq4C7TJK6yw_lQd3OSvX0UhK1DXq90TldcLfHtT0k_SbMTBQeau46B4fOtp9UhSh50GjmgsaspnlR4pUSLdLejL2hO_l-cqLUPnosgDnGinw7kRo3-4MFQbN6PrLYA"/>
@@ -377,7 +360,7 @@ export function DesignLifePage() {
 </div>
 </section>
 
-<section className="max-w-7xl mx-auto w-full px-margin mb-space-xl">
+<section className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 mb-space-xl">
 <div className="mb-space-lg">
 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-space-sm">
 <div>
@@ -577,7 +560,7 @@ export function DesignLifePage() {
 </div>
 </section>
 
-<section className="max-w-7xl mx-auto w-full px-margin mb-space-xl">
+<section className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 mb-space-xl">
 <div className="bg-surface-container-low rounded-xl p-space-lg lg:p-space-xl">
 <div className="max-w-3xl mb-space-lg">
 <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Statutory Tax Code Optimization</span>
@@ -623,7 +606,7 @@ export function DesignLifePage() {
 </div>
 </section>
 
-<section className="max-w-7xl mx-auto w-full px-margin mb-space-xl">
+<section className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 mb-space-xl">
 <div className="bg-surface-container-lowest rounded-xl p-space-lg lg:p-space-xl shadow-md grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
 <div className="lg:col-span-8 space-y-space-sm">
 <div className="inline-flex items-center gap-2 bg-surface-container text-secondary px-3 py-1 rounded font-label-sm text-label-sm font-bold">

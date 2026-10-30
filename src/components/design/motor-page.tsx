@@ -1,8 +1,8 @@
 /* Auto-adapted from stitch design HTML */
 export function DesignMotorPage() {
   return (
-<div className="design-page w-full bg-surface pt-28"><div className="pt-8"><div className="flex flex-col w-full">
-<div className="max-w-7xl mx-auto w-full px-margin-mobile md:px-margin space-y-space-xl">
+<div className="design-page w-full bg-surface pt-28 pb-24 md:pb-28"><div className="pt-8"><div className="flex flex-col w-full">
+<div className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 space-y-space-xl">
 
 <div className="bg-primary text-on-primary rounded-xl p-space-md shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
 <div className="flex items-center gap-space-md">
@@ -147,7 +147,7 @@ export function DesignMotorPage() {
 </div>
 <div className="flex justify-between py-1 bg-surface-container-lowest/60 px-2 rounded">
 <span className="text-on-surface-variant">Policy Expiry Date</span>
-<span className="font-bold text-error">Expiring in 6 Days</span>
+<span className="font-bold text-destructive">Expiring in 6 Days</span>
 </div>
 </div>
 </div>
@@ -710,29 +710,27 @@ export function DesignMotorPage() {
 </div>
 </div>
 
-<div className="sticky bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-md shadow-xl py-3 px-margin-mobile md:px-margin mt-space-lg">
-<div className="max-w-7xl mx-auto flex items-center justify-between gap-space-md">
-<div className="flex items-center gap-3">
-<div className="hidden sm:flex flex-col">
-<span className="font-label-sm text-label-sm text-outline uppercase">Active Selection</span>
-<span className="font-title-md text-title-md font-bold text-primary">Example Cover Optima Motor</span>
+<div className="fixed right-0 bottom-0 left-0 z-40 border-t border-outline-variant/50 bg-white/95 py-3 shadow-[0_-8px_30px_rgba(11,32,66,0.12)] backdrop-blur-md">
+<div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 md:px-8">
+<div className="min-w-0 flex-1">
+<span className="font-label-sm text-label-sm block text-outline uppercase">
+            Estimated annual
+          </span>
+<div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+<span className="font-headline-sm text-headline-sm font-bold text-primary" id="stickyTotalDisplay">
+              ₹14,610
+            </span>
+<span className="font-label-sm text-label-sm font-bold text-on-tertiary-container">
+              + GST
+            </span>
 </div>
-<div className="flex flex-col">
-<span className="font-label-sm text-label-sm text-outline uppercase">Estimated Annual Outflow</span>
-<div className="flex items-baseline gap-2">
-<span className="font-headline-sm text-headline-sm font-bold text-primary" id="stickyTotalDisplay">₹14,610</span>
-<span className="font-label-sm text-label-sm text-on-tertiary-container font-bold">+ GST (18%)</span>
 </div>
-</div>
-</div>
-<div className="flex items-center gap-2">
-<button className="hidden sm:inline-flex bg-surface-container text-on-surface font-label-md text-label-md px-4 py-2.5 rounded-lg hover:bg-surface-container-high transition-colors">
-          Download PDF Quotation
-        </button>
-<button className="bg-secondary hover:bg-secondary/90 text-on-secondary font-label-lg text-label-lg px-6 py-2.5 rounded-lg transition-all shadow-md flex items-center gap-2 font-bold">
-          Proceed to Purchase <span className="material-symbols-outlined text-[18px]" aria-hidden="true">lock</span>
-</button>
-</div>
+<a
+          href="/contact"
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-secondary px-4 py-2.5 text-sm font-bold text-on-secondary shadow-md transition hover:bg-[#003ea8] sm:px-5"
+        >
+          Proceed <span className="material-symbols-outlined text-[18px]" aria-hidden>lock</span>
+</a>
 </div>
 </div>
 
