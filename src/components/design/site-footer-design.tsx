@@ -7,13 +7,19 @@ export function SiteFooterDesign() {
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8 mb-12">
 
 <div className="lg:col-span-2 space-y-4">
-<div className="flex items-center gap-3">
-<img loading="lazy" alt="BimaHub Logo" className="h-9 w-auto object-contain bg-white rounded-lg p-1" src="https://lh3.googleusercontent.com/aida/AEtjO1Xpr552jGjilHd3UVX2i55kDv-3oYzdHS5rIV5I-2nAfhHunkD4g3LMyZYI3VuFwCxqFnIc8CZi1on-0OamrIXuM1QWiWdGnx6iHHJYCzRp0gg4FU1Mea0P0_QJ1iJWbhZO5Qid-jIeOeL53gNyhVIeEo8KDy4IKTX5kTTUo5vrXa9JZnlDwCpwscDGxPCYn9TpUQpaacJR6lr-KFlSqIxwS7q5vrK2N7mOiPJNxHbxPnQknU5zuSio6M04"/>
+<a className="flex items-center gap-3" href="/">
+<span className="flex size-9 items-center justify-center rounded-lg bg-secondary text-sm font-extrabold text-white">
+            BH
+          </span>
 <div>
-<span className="text-xl font-black text-white tracking-tight">Bima<span className="text-sky-400">Hub</span></span>
-<div className="text-[10px] text-tertiary-fixed font-bold tracking-wider uppercase">IRDAI Licensed Direct Broker</div>
+<span className="text-xl font-black tracking-tight text-white">
+              Bima<span className="text-sky-400">Hub</span>
+</span>
+<div className="text-[10px] font-bold tracking-wider text-tertiary-fixed uppercase">
+              Insurance comparison desk
+            </div>
 </div>
-</div>
+</a>
 <p className="text-xs text-slate-300 leading-relaxed pr-4">
             India’s premier digital insurance aggregation and institutional risk portal. Providing unbiased algorithm rankings, transparent premium comparisons, and end-to-end cashless claim settlements.
           </p>
@@ -110,11 +116,10 @@ export function SiteFooterDesign() {
 <div className="flex flex-col sm:flex-row items-center justify-between text-slate-400 pt-2 gap-3 text-xs">
 <div>© 2025 BimaHub Brokers Pvt Ltd. All rights reserved.</div>
 <div className="flex flex-wrap items-center gap-4">
-<a className="hover:text-white transition-colors" href="/life">Privacy Policy</a>
-<a className="hover:text-white transition-colors" href="/life">Terms of Use</a>
-<a className="hover:text-white transition-colors" href="/claims">Disclaimer</a>
-<a className="hover:text-white transition-colors" href="/">Grievance Redressal</a>
-<a className="hover:text-white transition-colors" href="/">Sitemap</a>
+<a className="hover:text-white transition-colors" href="/about">About us</a>
+<a className="hover:text-white transition-colors" href="/contact">Contact us</a>
+<a className="hover:text-white transition-colors" href="/claims">Claims</a>
+<a className="hover:text-white transition-colors" href="/">Home</a>
 </div>
 </div>
 </div>
