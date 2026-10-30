@@ -85,19 +85,9 @@ export function DesignHomePage() {
 </div>
 </div>
 
-<div className="lg:col-span-6 xl:col-span-5" id="hero-quick-quote">
+<div className="order-first lg:order-none lg:col-span-6 xl:col-span-5" id="hero-quick-quote">
 
-<div className="relative w-full h-44 sm:h-52 rounded-t-2xl overflow-hidden shadow-lg border-x border-t border-outline-variant/40">
-<img loading="lazy" alt="Happy Indian family protected with BimaHub" className="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqLjkCSOVukZYLEz8aEy4_5HIRX9tQzeof0UGlEMcFrPVJZsF1JSSBtNp-csFWN9HUTiGSrfj6YviNetn1UU4iEo3IcatR3eszRmFHhNrA-WLwDNDRDlPMsmNmEIZrx7BsaxNC8tPxtu7bZleMhGTLUhcLR5U5xEiN2wjmF8NC-w27N3ImN8PsgXViPCI7OZDcqWgdtaQFHEeI9WvDFdW-aSdJMGO9SCUOenQpqwISsetUA6fT9Tdz2A"/>
-<div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent flex flex-col justify-end p-4 text-white">
-<span className="bg-emerald-500/90 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full w-fit mb-1 backdrop-blur-sm">
-                  100% Cashless Family Cover
-                </span>
-<p className="text-xs sm:text-sm font-medium text-slate-100">Compare top rated policies side-by-side with zero sales pressure.</p>
-</div>
-</div>
-
-<div className="bg-white p-5 sm:p-6 rounded-b-2xl border-x border-b border-outline-variant/40 shadow-xl space-y-5">
+<div className="bg-white p-5 sm:p-6 rounded-t-2xl border-x border-t border-outline-variant/40 shadow-xl space-y-5">
 
 <div className="flex p-1 bg-surface-container-low rounded-xl text-xs font-semibold overflow-x-auto">
 <button className="flex-1 py-2 px-3 rounded-lg bg-secondary text-white font-bold text-center transition-all flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap" id="tab-motor" type="button">
@@ -125,7 +115,7 @@ export function DesignHomePage() {
 </div>
 <div className="grid grid-cols-2 gap-2">
 <label className="cursor-pointer bg-surface-container-low has-[:checked]:bg-primary-container has-[:checked]:text-white text-on-surface p-2.5 rounded-xl flex items-center justify-center gap-2 text-xs font-bold transition-all border border-transparent has-[:checked]:border-secondary">
-<input checked="" className="hidden" name="vehicle-type-radio" type="radio"/>
+<input className="hidden" defaultChecked name="vehicle-type-radio" type="radio"/>
 <span className="material-symbols-outlined text-[18px]" aria-hidden="true">directions_car</span>
                     Private Car
                   </label>
@@ -254,6 +244,16 @@ export function DesignHomePage() {
 <div className="pt-1 border-t border-slate-100 flex items-center justify-center gap-2 text-xs text-slate-400">
 <span className="material-symbols-outlined text-[15px] text-emerald-600" aria-hidden="true">verified</span>
 <span>45-second issuance • Policy PDF on WhatsApp • Zero spam call guarantee</span>
+</div>
+</div>
+
+<div className="relative h-44 w-full overflow-hidden rounded-b-2xl border-x border-b border-outline-variant/40 shadow-lg sm:h-52">
+<img loading="lazy" alt="Happy Indian family protected with BimaHub" className="h-full w-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqLjkCSOVukZYLEz8aEy4_5HIRX9tQzeof0UGlEMcFrPVJZsF1JSSBtNp-csFWN9HUTiGSrfj6YviNetn1UU4iEo3IcatR3eszRmFHhNrA-WLwDNDRDlPMsmNmEIZrx7BsaxNC8tPxtu7bZleMhGTLUhcLR5U5xEiN2wjmF8NC-w27N3ImN8PsgXViPCI7OZDcqWgdtaQFHEeI9WvDFdW-aSdJMGO9SCUOenQpqwISsetUA6fT9Tdz2A"/>
+<div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/80 via-primary/30 to-transparent p-4 text-white">
+<span className="mb-1 w-fit rounded-full bg-emerald-500/90 px-2.5 py-0.5 text-[11px] font-bold text-white backdrop-blur-sm">
+                  100% Cashless Family Cover
+                </span>
+<p className="text-xs font-medium text-slate-100 sm:text-sm">Compare top rated policies side-by-side with zero sales pressure.</p>
 </div>
 </div>
 </div>
