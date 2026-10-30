@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { List, Phone, X } from "@phosphor-icons/react";
+import { LiveDispatch } from "@/components/live-dispatch";
 import { cn } from "cn";
 
 const NAV = [
@@ -33,19 +34,11 @@ export function SiteHeaderDesign() {
   return (
     <header className="fixed top-0 right-0 left-0 z-50 border-b border-outline-variant/50 bg-white/95 shadow-sm backdrop-blur-md">
       <div className="border-b border-primary-container bg-primary text-primary-foreground">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-2 text-xs sm:px-8">
-          <p className="font-medium text-slate-200">
-            IRDAI-aware advisory desk · 24x7 claim helpline{" "}
-            <a
-              className="font-semibold text-white underline-offset-2 hover:underline"
-              href="tel:18002088777"
-            >
-              1800-208-8777
-            </a>
-          </p>
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2 sm:px-8">
+          <LiveDispatch tone="header" />
           <Link
             href="/contact"
-            className="font-semibold text-tertiary-fixed transition-colors hover:text-white"
+            className="hidden shrink-0 font-semibold text-tertiary-fixed transition-colors hover:text-white sm:inline"
           >
             Request a callback
           </Link>

@@ -1,4 +1,6 @@
 /* Auto-adapted from stitch design HTML */
+import { LiveDispatch } from "@/components/live-dispatch";
+
 export function DesignHomePage() {
   return (
 <div className="design-page w-full bg-surface pt-28"><section className="relative w-full overflow-hidden bg-gradient-to-b from-white via-surface-container-low/70 to-surface pb-16 pt-4 lg:pt-8" id="hero-section">
@@ -8,26 +10,7 @@ export function DesignHomePage() {
 <div className="absolute bottom-0 left-1/3 w-[28rem] h-[28rem] rounded-full bg-amber-400/10 blur-3xl pointer-events-none"></div>
 <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
 
-<div className="flex flex-wrap items-center justify-between gap-3 bg-white border border-outline-variant/40 px-4 py-2.5 rounded-2xl shadow-sm mb-8">
-<div className="flex items-center gap-2.5 text-xs text-on-surface">
-<span className="relative flex h-2.5 w-2.5">
-<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-<span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-</span>
-<span className="font-bold text-secondary">LIVE DISPATCH:</span>
-<span className="text-slate-600 font-medium">16,420 policies issued today • ₹46.2 Cr cashless claims processed this month</span>
-</div>
-<div className="flex items-center gap-4 text-xs font-semibold text-slate-600">
-<span className="flex items-center gap-1.5 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">
-<span className="material-symbols-outlined text-[16px]" aria-hidden="true">verified_user</span>
-              IRDAI Licensed Direct Broker
-            </span>
-<span className="hidden sm:flex items-center gap-1 text-slate-500">
-<span className="material-symbols-outlined text-[16px] text-secondary" aria-hidden="true">lock</span>
-              256-Bit Bank Grade Encryption
-            </span>
-</div>
-</div>
+<LiveDispatch tone="card" />
 
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 
@@ -87,7 +70,16 @@ export function DesignHomePage() {
 
 <div className="order-first lg:order-none lg:col-span-6 xl:col-span-5" id="hero-quick-quote">
 
-<div className="bg-white p-5 sm:p-6 rounded-t-2xl border-x border-t border-outline-variant/40 shadow-xl space-y-5">
+<div className="relative h-44 w-full overflow-hidden rounded-t-2xl border-x border-t border-outline-variant/40 shadow-lg sm:h-52">
+<img
+              loading="lazy"
+              alt="Happy Indian family protected with BimaHub"
+              className="h-full w-full object-cover object-[center_30%]"
+              src="/images/design/family-cover.png"
+            />
+</div>
+
+<div className="space-y-5 rounded-b-2xl border-x border-b border-outline-variant/40 bg-white p-5 shadow-xl sm:p-6">
 
 <div className="flex p-1 bg-surface-container-low rounded-xl text-xs font-semibold overflow-x-auto">
 <button className="flex-1 py-2 px-3 rounded-lg bg-secondary text-white font-bold text-center transition-all flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap" id="tab-motor" type="button">
@@ -241,19 +233,9 @@ export function DesignHomePage() {
 </button>
 </div>
 
-<div className="pt-1 border-t border-slate-100 flex items-center justify-center gap-2 text-xs text-slate-400">
+<div className="flex items-center justify-center gap-2 border-t border-slate-100 pt-1 text-xs text-slate-400">
 <span className="material-symbols-outlined text-[15px] text-emerald-600" aria-hidden="true">verified</span>
 <span>45-second issuance • Policy PDF on WhatsApp • Zero spam call guarantee</span>
-</div>
-</div>
-
-<div className="relative h-44 w-full overflow-hidden rounded-b-2xl border-x border-b border-outline-variant/40 shadow-lg sm:h-52">
-<img loading="lazy" alt="Happy Indian family protected with BimaHub" className="h-full w-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqLjkCSOVukZYLEz8aEy4_5HIRX9tQzeof0UGlEMcFrPVJZsF1JSSBtNp-csFWN9HUTiGSrfj6YviNetn1UU4iEo3IcatR3eszRmFHhNrA-WLwDNDRDlPMsmNmEIZrx7BsaxNC8tPxtu7bZleMhGTLUhcLR5U5xEiN2wjmF8NC-w27N3ImN8PsgXViPCI7OZDcqWgdtaQFHEeI9WvDFdW-aSdJMGO9SCUOenQpqwISsetUA6fT9Tdz2A"/>
-<div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/80 via-primary/30 to-transparent p-4 text-white">
-<span className="mb-1 w-fit rounded-full bg-emerald-500/90 px-2.5 py-0.5 text-[11px] font-bold text-white backdrop-blur-sm">
-                  100% Cashless Family Cover
-                </span>
-<p className="text-xs font-medium text-slate-100 sm:text-sm">Compare top rated policies side-by-side with zero sales pressure.</p>
 </div>
 </div>
 </div>
