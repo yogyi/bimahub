@@ -117,10 +117,10 @@ export function GuideSection() {
             ))}
           </ul>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/#calculator" className={buttonVariants()}>
+            <Link href="/#hero-quick-quote" className={buttonVariants()}>
               Try a calculator
             </Link>
-            <Link href="/#quote" className={buttonVariants({ variant: "outline" })}>
+            <Link href="/contact" className={buttonVariants({ variant: "outline" })}>
               Ask for a quote
             </Link>
           </div>
@@ -226,7 +226,7 @@ export function PhoneSection() {
             <a href="tel:+919876543210" className={buttonVariants()}>
               Save desk number
             </a>
-            <Link href="/#quote" className={buttonVariants({ variant: "outline" })}>
+            <Link href="/contact" className={buttonVariants({ variant: "outline" })}>
               Request callback
             </Link>
           </div>
@@ -284,7 +284,7 @@ export function PhoneSection() {
               </div>
               <div className="border-t border-border px-3 py-3">
                 <Link
-                  href="/#quote"
+                  href="/contact"
                   className="flex h-10 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground"
                 >
                   Get a free quote
@@ -345,7 +345,7 @@ export function SupportSection() {
             </a>
           </div>
           <Link
-            href="/#quote"
+            href="/contact"
             className={cn(buttonVariants(), "mt-6")}
           >
             Request a callback

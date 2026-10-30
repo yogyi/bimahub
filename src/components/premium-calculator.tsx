@@ -279,7 +279,7 @@ export function PremiumCalculator() {
             ))}
           </ul>
         </div>
-        <Link href="/#quote" className={cn(buttonVariants(), "mt-8 w-fit")}>
+        <Link href="/contact" className={cn(buttonVariants(), "mt-8 w-fit")}>
           Get a quote on this range
         </Link>
       </div>

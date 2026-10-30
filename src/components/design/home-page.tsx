@@ -1,3 +1,4 @@
+import { HomeFaq } from "@/components/home-faq";
 import { HeroQuoteForm } from "@/components/hero-quote-form";
 /* Auto-adapted from stitch design HTML */
 export function DesignHomePage() {
@@ -238,7 +239,7 @@ export function DesignHomePage() {
 </div>
 </a>
 
-<a className="group bg-white p-5 rounded-2xl border border-outline-variant/40 hover:border-secondary/50 hover:shadow-md transition-all flex flex-col justify-between" href="#hero-quick-quote">
+<a className="group bg-white p-5 rounded-2xl border border-outline-variant/40 hover:border-secondary/50 hover:shadow-md transition-all flex flex-col justify-between" href="/non-motor">
 <div>
 <div className="flex items-start justify-between mb-3">
 <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center group-hover:scale-105 transition-transform">
@@ -317,7 +318,7 @@ export function DesignHomePage() {
 <span className="text-[11px] text-slate-400">GST included</span>
 </td>
 <td className="py-4 px-6 text-right">
-<button className="py-2 px-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white text-xs font-bold rounded-xl transition-all shadow-sm" type="button">Get Quote</button>
+<a href="/contact" className="inline-flex py-2 px-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white text-xs font-bold rounded-xl transition-all shadow-sm">Get Quote</a>
 </td>
 </tr>
 
@@ -350,7 +351,7 @@ export function DesignHomePage() {
 <span className="text-[11px] text-slate-400">GST included</span>
 </td>
 <td className="py-4 px-6 text-right">
-<button className="py-2 px-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white text-xs font-bold rounded-xl transition-all shadow-sm" type="button">Get Quote</button>
+<a href="/contact" className="inline-flex py-2 px-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white text-xs font-bold rounded-xl transition-all shadow-sm">Get Quote</a>
 </td>
 </tr>
 
@@ -383,7 +384,7 @@ export function DesignHomePage() {
 <span className="text-[11px] text-slate-400">GST included</span>
 </td>
 <td className="py-4 px-6 text-right">
-<button className="py-2 px-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white text-xs font-bold rounded-xl transition-all shadow-sm" type="button">Get Quote</button>
+<a href="/contact" className="inline-flex py-2 px-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white text-xs font-bold rounded-xl transition-all shadow-sm">Get Quote</a>
 </td>
 </tr>
 
@@ -416,7 +417,7 @@ export function DesignHomePage() {
 <span className="text-[11px] text-slate-400">GST included</span>
 </td>
 <td className="py-4 px-6 text-right">
-<button className="py-2 px-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white text-xs font-bold rounded-xl transition-all shadow-sm" type="button">Get Quote</button>
+<a href="/contact" className="inline-flex py-2 px-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white text-xs font-bold rounded-xl transition-all shadow-sm">Get Quote</a>
 </td>
 </tr>
 </tbody>
@@ -625,48 +626,7 @@ export function DesignHomePage() {
 <div className="lg:col-span-7">
 <span className="text-xs font-bold tracking-widest uppercase text-secondary">HELP &amp; CLARITY</span>
 <h2 className="text-2xl sm:text-3xl font-extrabold text-primary mt-1 mb-6">Frequently Asked Questions</h2>
-<div className="space-y-3" id="faq-container">
-
-<div className="bg-surface-container-low border border-outline-variant/40 rounded-xl p-4 transition-all">
-<button className="w-full flex items-center justify-between text-left font-bold text-sm text-primary gap-3" type="button">
-<span>How does BimaHub offer lower premiums than insurer websites directly?</span>
-<span className="material-symbols-outlined text-[20px] text-secondary shrink-0" aria-hidden="true" id="faq-icon-faq-1">expand_less</span>
-</button>
-<div className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed" id="faq-body-faq-1">
-                  As an IRDAI-registered direct insurance broker representing millions of policyholders, BimaHub unlocks collective institutional cohort tariffs. Furthermore, our digital-first paperless operations eliminate manual intermediary commissions.
-                </div>
-</div>
-
-<div className="bg-surface-container-low border border-outline-variant/40 rounded-xl p-4 transition-all">
-<button className="w-full flex items-center justify-between text-left font-bold text-sm text-primary gap-3" type="button">
-<span>What happens if my cashless hospital claim gets delayed or questioned?</span>
-<span className="material-symbols-outlined text-[20px] text-secondary shrink-0" aria-hidden="true" id="faq-icon-faq-2">expand_more</span>
-</button>
-<div className="hidden mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed" id="faq-body-faq-2">
-                  Call our 24x7 Priority Claims Desk at 1800-208-8777. BimaHub deploys a dedicated on-site hospital liaison who directly interfaces with the third-party administrator (TPA) desk to clear medical documentation queries.
-                </div>
-</div>
-
-<div className="bg-surface-container-low border border-outline-variant/40 rounded-xl p-4 transition-all">
-<button className="w-full flex items-center justify-between text-left font-bold text-sm text-primary gap-3" type="button">
-<span>Can I transfer my accumulated No Claim Bonus (NCB) to a new insurer?</span>
-<span className="material-symbols-outlined text-[20px] text-secondary shrink-0" aria-hidden="true" id="faq-icon-faq-3">expand_more</span>
-</button>
-<div className="hidden mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed" id="faq-body-faq-3">
-                  Yes! Under IRDAI guidelines, your accumulated NCB (up to 50%) is earned by you as an individual driver. When renewing on BimaHub, simply upload your prior policy copy, and your full discount is automatically applied.
-                </div>
-</div>
-
-<div className="bg-surface-container-low border border-outline-variant/40 rounded-xl p-4 transition-all">
-<button className="w-full flex items-center justify-between text-left font-bold text-sm text-primary gap-3" type="button">
-<span>Are life insurance maturity proceeds completely tax-free in India?</span>
-<span className="material-symbols-outlined text-[20px] text-secondary shrink-0" aria-hidden="true" id="faq-icon-faq-4">expand_more</span>
-</button>
-<div className="hidden mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed" id="faq-body-faq-4">
-                  Yes, under Section 10(10D) parameters for policies within statutory premium limits. Pure term insurance death benefits are 100% tax-exempt without any cap.
-                </div>
-</div>
-</div>
+<HomeFaq />
 </div>
 
 <div className="lg:col-span-5 bg-gradient-to-br from-surface-container-low via-white to-blue-50/50 p-6 sm:p-8 rounded-2xl border border-outline-variant/40 shadow-md">
@@ -696,9 +656,9 @@ export function DesignHomePage() {
 <label className="text-xs font-semibold text-slate-500 block">Enter Mobile Number</label>
 <div className="flex gap-2">
 <input className="flex-1 bg-white border border-outline-variant/60 text-primary font-bold text-sm px-3.5 py-2.5 rounded-xl focus:border-secondary outline-none shadow-sm" placeholder="+91 98765 43210" type="tel"/>
-<button className="py-2.5 px-4 bg-secondary hover:bg-on-secondary-fixed-variant text-white text-xs font-bold rounded-xl transition-all shadow-sm whitespace-nowrap" type="button">
+<a href="/contact" className="inline-flex items-center justify-center rounded-xl bg-secondary px-4 py-2.5 text-xs font-bold whitespace-nowrap text-white shadow-sm transition-all hover:bg-[#003ea8]">
                   Request Call
-                </button>
+                </a>
 </div>
 </div>
 <div className="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-500">

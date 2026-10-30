@@ -14,7 +14,7 @@ const PRODUCTS = [
   { href: "/motor", label: "Car & bike" },
   { href: "/life", label: "LIC & savings" },
   { href: "/non-motor", label: "Shop & home" },
-  { href: "/#calculator", label: "Calculators" },
+  { href: "/#hero-quick-quote", label: "Calculators" },
 ] as const;
 
 const LINKS = [
@@ -33,7 +33,7 @@ export function SiteHeader() {
     dialogRef.current?.close();
   }, [pathname]);
 
-  const quoteHref = pathname === "/" ? "/#quote" : "/contact";
+  const quoteHref = pathname === "/" ? "/contact" : "/contact";
 
   return (
     <div className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">

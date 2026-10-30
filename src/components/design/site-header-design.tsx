@@ -8,9 +8,10 @@ import { LiveDispatch } from "@/components/live-dispatch";
 import { cn } from "cn";
 
 const NAV = [
-  { href: "/motor", label: "Motor" },
-  { href: "/health", label: "Health" },
   { href: "/life", label: "Life & LIC" },
+  { href: "/health", label: "Health" },
+  { href: "/motor", label: "Motor" },
+  { href: "/non-motor", label: "Shop & home" },
   { href: "/claims", label: "Claims" },
   { href: "/about", label: "About us" },
   { href: "/contact", label: "Contact us" },
@@ -58,7 +59,7 @@ export function SiteHeaderDesign() {
         </Link>
 
         <nav
-          className="hidden items-center gap-1 lg:flex"
+          className="hidden items-center gap-0.5 xl:flex"
           aria-label="Primary"
         >
           {NAV.map((item) => {
@@ -70,7 +71,7 @@ export function SiteHeaderDesign() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-lg px-3 py-2 text-sm font-semibold transition-colors",
+                  "rounded-lg px-2.5 py-2 text-[13px] font-semibold transition-colors",
                   active
                     ? "bg-surface-container-low text-secondary"
                     : "text-on-surface-variant hover:bg-surface-container-low hover:text-secondary",
@@ -98,7 +99,7 @@ export function SiteHeaderDesign() {
           </Link>
           <button
             type="button"
-            className="inline-flex size-10 items-center justify-center rounded-lg border border-outline-variant/70 text-on-surface lg:hidden"
+            className="inline-flex size-10 items-center justify-center rounded-lg border border-outline-variant/70 text-on-surface xl:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -112,7 +113,7 @@ export function SiteHeaderDesign() {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-outline-variant/50 bg-white lg:hidden"
+          className="border-t border-outline-variant/50 bg-white xl:hidden"
         >
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-8" aria-label="Mobile">
             {NAV.map((item) => {

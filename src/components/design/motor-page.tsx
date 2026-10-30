@@ -25,9 +25,9 @@ export function DesignMotorPage() {
 <span className="bg-primary-container text-primary-fixed font-label-md text-label-md px-3 py-1.5 rounded-lg flex items-center gap-1.5">
 <span className="material-symbols-outlined text-[16px]" aria-hidden="true">pin_drop</span> RTO: MH-02 (Mumbai West)
         </span>
-<button className="bg-secondary-container hover:bg-secondary text-on-secondary font-label-md text-label-md px-4 py-1.5 rounded-lg transition-colors flex items-center gap-1" id="openVehicleModal">
+<a href="/contact" className="inline-flex items-center gap-1 rounded-lg bg-secondary-container px-4 py-1.5 font-label-md text-label-md text-on-secondary transition-colors hover:bg-secondary">
 <span className="material-symbols-outlined text-[16px]" aria-hidden="true">tune</span> Modify Vehicle
-        </button>
+        </a>
 </div>
 </div>
 

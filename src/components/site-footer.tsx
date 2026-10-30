@@ -16,10 +16,10 @@ const COLUMNS = [
   {
     title: "Calculators",
     links: [
-      { href: "/#calculator", label: "Motor premium" },
-      { href: "/#calculator", label: "Health premium" },
-      { href: "/#calculator", label: "Term life premium" },
-      { href: "/#calculator", label: "Compare covers" },
+      { href: "/#hero-quick-quote", label: "Motor premium" },
+      { href: "/#hero-quick-quote", label: "Health premium" },
+      { href: "/#hero-quick-quote", label: "Term life premium" },
+      { href: "/#hero-quick-quote", label: "Compare covers" },
     ],
   },
   {
@@ -37,7 +37,7 @@ const COLUMNS = [
     links: [
       { href: "/about", label: "About us" },
       { href: "/contact", label: "Contact us" },
-      { href: "/#quote", label: "Get a quote" },
+      { href: "/contact", label: "Get a quote" },
       { href: "/#support", label: "Talk to expert" },
     ],
   },
