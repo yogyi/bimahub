@@ -61,13 +61,17 @@ export function DesignLifePage() {
 
 <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-space-lg">
 <div>
-<div className="flex items-center gap-space-md mb-space-md">
-<div className="bg-surface-container-lowest p-2 rounded-lg shadow-md flex items-center justify-center">
-<img loading="lazy" className="h-10 w-auto object-contain" data-alt="Official Life Insurance Corporation of India LIC high resolution emblem featuring the traditional twin holding hands with the flame icon in rich sovereign gold and deep royal navy blue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjRrm1YDWAsDeBpr_P0BORgMrMQ9TILZ5_39sRTmfF8u5uPUoMfIskLZyclfHqppDFmWFyuECVlYg6rL5GwMd5CcIAQPsuwBZ0tC-twWJf7vArnUwPduj9vDv8BK9hPKS8qhKS2p1tpNcgfh-H1bruvGi_2vhIuCyt1TqWxVDQPu2BesDMbeAP1C7AGa-I6-U8rILkzzdXOEVSI1mPk7JFszCGAwEIpeJu_h6hBfNj-IrfoojlzH7meQ"/>
-</div>
+<div className="mb-space-md flex items-center gap-space-md">
+<div className="flex size-12 items-center justify-center rounded-lg bg-surface-container-lowest text-sm font-extrabold text-primary shadow-md">
+              LIC
+            </div>
 <div>
-<span className="text-tertiary-fixed font-label-sm text-label-sm uppercase tracking-widest block font-bold">Official Strategic Partner</span>
-<span className="font-headline-sm text-headline-sm text-on-primary font-bold">Life Insurance Corporation of India</span>
+<span className="font-label-sm text-label-sm block font-bold tracking-widest text-tertiary-fixed uppercase">
+                Product line
+              </span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-primary">
+                LIC savings &amp; term plans
+              </span>
 </div>
 </div>
 <div className="bg-primary/60 backdrop-blur-md p-space-md rounded-lg space-y-space-xs mb-space-md">
