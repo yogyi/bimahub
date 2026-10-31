@@ -179,7 +179,7 @@ export function DesignMotorPage() {
 <label className="addon-card cursor-pointer rounded-xl p-space-md bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between select-none relative">
 <div className="flex items-start justify-between">
 <div className="flex items-center gap-3">
-<input checked="" className="addon-checkbox w-5 h-5 rounded accent-secondary cursor-pointer" data-addon="Zero Depreciation" type="checkbox" defaultValue="1850"/>
+<input defaultChecked className="addon-checkbox w-5 h-5 rounded accent-secondary cursor-pointer" data-addon="Zero Depreciation" type="checkbox" defaultValue="1850"/>
 <div>
 <span className="font-title-md text-title-md font-bold text-primary block">Zero Depreciation</span>
 <span className="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full inline-block mt-0.5">Top Recommendation</span>
@@ -195,7 +195,7 @@ export function DesignMotorPage() {
 <label className="addon-card cursor-pointer rounded-xl p-space-md bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between select-none relative">
 <div className="flex items-start justify-between">
 <div className="flex items-center gap-3">
-<input checked="" className="addon-checkbox w-5 h-5 rounded accent-secondary cursor-pointer" data-addon="Engine Protection" type="checkbox" defaultValue="720"/>
+<input defaultChecked className="addon-checkbox w-5 h-5 rounded accent-secondary cursor-pointer" data-addon="Engine Protection" type="checkbox" defaultValue="720"/>
 <div>
 <span className="font-title-md text-title-md font-bold text-primary block">Engine &amp; Gearbox Guard</span>
 <span className="text-on-surface-variant font-label-sm text-label-sm block mt-0.5">Hydrostatic Lock Protection</span>
@@ -211,7 +211,7 @@ export function DesignMotorPage() {
 <label className="addon-card cursor-pointer rounded-xl p-space-md bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between select-none relative">
 <div className="flex items-start justify-between">
 <div className="flex items-center gap-3">
-<input checked="" className="addon-checkbox w-5 h-5 rounded accent-secondary cursor-pointer" data-addon="24x7 RSA" type="checkbox" defaultValue="350"/>
+<input defaultChecked className="addon-checkbox w-5 h-5 rounded accent-secondary cursor-pointer" data-addon="24x7 RSA" type="checkbox" defaultValue="350"/>
 <div>
 <span className="font-title-md text-title-md font-bold text-primary block">24x7 Roadside Assist</span>
 <span className="text-on-surface-variant font-label-sm text-label-sm block mt-0.5">Pan-India Towing &amp; RSA</span>
@@ -243,7 +243,7 @@ export function DesignMotorPage() {
 <label className="addon-card cursor-pointer rounded-xl p-space-md bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between select-none relative">
 <div className="flex items-start justify-between">
 <div className="flex items-center gap-3">
-<input checked="" className="addon-checkbox w-5 h-5 rounded accent-secondary cursor-pointer" data-addon="Consumables" type="checkbox" defaultValue="450"/>
+<input defaultChecked className="addon-checkbox w-5 h-5 rounded accent-secondary cursor-pointer" data-addon="Consumables" type="checkbox" defaultValue="450"/>
 <div>
 <span className="font-title-md text-title-md font-bold text-primary block">Consumables Cover</span>
 <span className="text-on-surface-variant font-label-sm text-label-sm block mt-0.5">Oils, Nuts, Coolants &amp; Gas</span>
@@ -754,7 +754,7 @@ export function DesignMotorPage() {
 <div>
 <label className="block font-label-sm text-label-sm text-on-surface-variant mb-1">Make &amp; Model</label>
 <select className="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm p-3 rounded-lg focus:outline-none">
-<option selected="">Hyundai Creta</option>
+<option selected={true}>Hyundai Creta</option>
 <option>Kia Seltos</option>
 <option>Maruti Grand Vitara</option>
 <option>Tata Harrier</option>
@@ -763,7 +763,7 @@ export function DesignMotorPage() {
 <div>
 <label className="block font-label-sm text-label-sm text-on-surface-variant mb-1">Fuel &amp; Transmission</label>
 <select className="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm p-3 rounded-lg focus:outline-none">
-<option selected="">1.5 Petrol (Manual)</option>
+<option selected={true}>1.5 Petrol (Manual)</option>
 <option>1.5 Petrol (IVT / Auto)</option>
 <option>1.5 Diesel (Manual)</option>
 <option>1.5 Diesel (Automatic)</option>
@@ -776,7 +776,7 @@ export function DesignMotorPage() {
 <select className="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm p-3 rounded-lg focus:outline-none">
 <option>2024</option>
 <option>2023</option>
-<option selected="">2022</option>
+<option selected={true}>2022</option>
 <option>2021</option>
 <option>2020</option>
 </select>

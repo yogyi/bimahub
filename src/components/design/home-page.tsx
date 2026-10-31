@@ -436,7 +436,7 @@ export function DesignHomePage() {
 <section className="w-full py-20 bg-primary text-white relative overflow-hidden" id="claims-section">
 
 <div className="absolute right-0 bottom-0 opacity-5 pointer-events-none">
-<svg fill="currentColor" height="400" viewbox="0 0 24 24" width="400">
+<svg fill="currentColor" height="400" viewBox="0 0 24 24" width="400">
 <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.67-3.13 9.06-7 10.18-3.87-1.12-7-5.51-7-10.18V6.3l7-3.12z"></path>
 </svg>
 </div>

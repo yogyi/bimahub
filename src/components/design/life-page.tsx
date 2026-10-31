@@ -105,7 +105,7 @@ export function DesignLifePage() {
 <label className="font-label-lg text-label-lg text-on-surface-variant font-medium">Monthly Investment Amount</label>
 <span className="font-headline-sm text-headline-sm text-primary font-bold" id="amount-display">₹10,000 / mo</span>
 </div>
-<input className="w-full h-2.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary" id="slider-amount" max="100000" min="2000" oninput="updateCalculator()" step="1000" type="range" defaultValue="10000"/>
+<input className="w-full h-2.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary" id="slider-amount" max="100000" min="2000"  step="1000" type="range" defaultValue="10000"/>
 <div className="flex justify-between text-body-sm font-body-sm text-outline mt-1">
 <span className="">₹2,000</span>
 <span className="">₹50,000</span>
@@ -118,7 +118,7 @@ export function DesignLifePage() {
 <label className="font-label-lg text-label-lg text-on-surface-variant font-medium">Investment Tenure (Years to Pay)</label>
 <span className="font-headline-sm text-headline-sm text-primary font-bold" id="tenure-display">16 Years</span>
 </div>
-<input className="w-full h-2.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary" id="slider-tenure" max="25" min="10" oninput="updateCalculator()" step="1" type="range" defaultValue="16"/>
+<input className="w-full h-2.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary" id="slider-tenure" max="25" min="10"  step="1" type="range" defaultValue="16"/>
 <div className="flex justify-between text-body-sm font-body-sm text-outline mt-1">
 <span className="">10 Yrs</span>
 <span className="">16 Yrs (Jeevan Labh Ideal)</span>
@@ -637,14 +637,14 @@ export function DesignLifePage() {
 </div>
 
 <div className="lg:col-span-4 bg-surface-container p-space-lg rounded-xl">
-<form className="space-y-space-sm" onsubmit="handleAdvisorSubmit(event)">
+<form className="space-y-space-sm">
 <div>
 <label className="block font-label-sm text-label-sm text-on-surface-variant font-bold mb-1">Your Full Name</label>
-<input className="w-full bg-surface-container-lowest text-on-surface px-3 py-2 rounded-lg text-body-sm font-body-sm outline-none focus:bg-surface-container-lowest" placeholder="e.g. Vikramaditya Sen" required="" type="text"/>
+<input className="w-full bg-surface-container-lowest text-on-surface px-3 py-2 rounded-lg text-body-sm font-body-sm outline-none focus:bg-surface-container-lowest" placeholder="e.g. Vikramaditya Sen" required type="text"/>
 </div>
 <div>
 <label className="block font-label-sm text-label-sm text-on-surface-variant font-bold mb-1">Mobile (OTP Verified)</label>
-<input className="w-full bg-surface-container-lowest text-on-surface px-3 py-2 rounded-lg text-body-sm font-body-sm outline-none focus:bg-surface-container-lowest" placeholder="+91 98765 43210" required="" type="tel"/>
+<input className="w-full bg-surface-container-lowest text-on-surface px-3 py-2 rounded-lg text-body-sm font-body-sm outline-none focus:bg-surface-container-lowest" placeholder="+91 98765 43210" required type="tel"/>
 </div>
 <div>
 <label className="block font-label-sm text-label-sm text-on-surface-variant font-bold mb-1">Consultation Mode</label>

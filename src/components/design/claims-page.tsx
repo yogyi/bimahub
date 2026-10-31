@@ -58,7 +58,7 @@ export function DesignClaimsPage() {
 <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-secondary"></span>7,500+ Garages Cashless</span>
 </div>
 </div>
-<form className="flex flex-col sm:flex-row items-stretch gap-space-sm" id="claimTrackForm" onsubmit="event.preventDefault(); trackClaimDemo();">
+<form className="flex flex-col sm:flex-row items-stretch gap-space-sm" id="claimTrackForm">
 <div className="flex-1 relative">
 <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]" aria-hidden="true">badge</span>
 <input className="w-full pl-11 pr-4 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-inner" id="trackingInput" placeholder="Enter Claim Reference # / Policy Number / Vehicle Reg (e.g. MH-02-EE-4091)" type="text" defaultValue="CLM-2024-88492"/>
@@ -520,8 +520,8 @@ export function DesignClaimsPage() {
 <span className="material-symbols-outlined text-secondary text-[16px]" aria-hidden="true">autorenew</span>
 <span className="">Instant 1-Click Policy Renewal</span>
 </div>
-<form className="flex flex-col sm:flex-row gap-space-xs" onsubmit="event.preventDefault(); alert('Redirecting to secure gateway renewal...');">
-<input className="px-3 py-2 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg focus:outline-none focus:bg-surface-container-lowest" placeholder="Enter Policy No. (e.g. 2108-9842)" required="" type="text"/>
+<form className="flex flex-col sm:flex-row gap-space-xs">
+<input className="px-3 py-2 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg focus:outline-none focus:bg-surface-container-lowest" placeholder="Enter Policy No. (e.g. 2108-9842)" required type="text"/>
 <button className="px-space-md py-2 bg-secondary hover:bg-primary text-on-secondary rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap" type="submit">
               Renew Now
             </button>
@@ -610,7 +610,7 @@ export function DesignClaimsPage() {
 <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-space-xl w-full">
 <div className="bg-primary text-on-primary rounded-xl p-space-lg lg:p-space-xl relative overflow-hidden shadow-xl">
 <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none">
-<svg fill="currentColor" height="400" viewbox="0 0 200 200" width="400">
+<svg fill="currentColor" height="400" viewBox="0 0 200 200" width="400">
 <polygon points="100,10 190,60 190,140 100,190 10,140 10,60"></polygon>
 </svg>
 </div>
@@ -664,18 +664,18 @@ export function DesignClaimsPage() {
 <p className="font-body-md text-body-md text-on-surface-variant mb-space-md">
         An on-call claims doctor and TPA field representative will contact the hospital billing desk within <strong>8 minutes</strong>.
       </p>
-<form className="space-y-3 mb-space-md" onsubmit="event.preventDefault(); handleSosSubmit();">
+<form className="space-y-3 mb-space-md">
 <div>
 <label className="block font-label-sm text-label-sm text-on-surface mb-1">Patient Name</label>
-<input className="w-full px-3 py-2 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" id="sosName" placeholder="Full Name as on Aadhaar" required="" type="text"/>
+<input className="w-full px-3 py-2 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" id="sosName" placeholder="Full Name as on Aadhaar" required type="text"/>
 </div>
 <div>
 <label className="block font-label-sm text-label-sm text-on-surface mb-1">Hospital Name &amp; City</label>
-<input className="w-full px-3 py-2 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" id="sosHospital" placeholder="e.g. Apollo Hospital, Jubilee Hills, Hyderabad" required="" type="text"/>
+<input className="w-full px-3 py-2 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" id="sosHospital" placeholder="e.g. Apollo Hospital, Jubilee Hills, Hyderabad" required type="text"/>
 </div>
 <div>
 <label className="block font-label-sm text-label-sm text-on-surface mb-1">Emergency Attendant Mobile No.</label>
-<input className="w-full px-3 py-2 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" id="sosPhone" placeholder="+91 98765 43210" required="" type="tel"/>
+<input className="w-full px-3 py-2 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" id="sosPhone" placeholder="+91 98765 43210" required type="tel"/>
 </div>
 <button className="w-full py-3 bg-error hover:bg-on-error-container text-on-error rounded-xl font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2 mt-4 shadow-md" type="submit">
 <span className="material-symbols-outlined text-[20px]" aria-hidden="true">send</span>

@@ -618,11 +618,11 @@ export function DesignHealthPage() {
 </div>
 <div className="flex flex-col gap-2 pt-2">
 <label className="flex items-center gap-2 text-body-sm font-body-sm text-on-surface cursor-pointer">
-<input checked="" className="w-4 h-4 rounded text-secondary focus:ring-0" id="selfFamCheck" onchange="calculateTax()" type="checkbox"/>
+<input defaultChecked className="w-4 h-4 rounded text-secondary focus:ring-0" id="selfFamCheck"  type="checkbox"/>
 <span className="">Self, Spouse &amp; Dependent Children (Max ₹25,000 deduction)</span>
 </label>
 <label className="flex items-center gap-2 text-body-sm font-body-sm text-on-surface cursor-pointer">
-<input checked="" className="w-4 h-4 rounded text-secondary focus:ring-0" id="seniorParentsCheck" onchange="calculateTax()" type="checkbox"/>
+<input defaultChecked className="w-4 h-4 rounded text-secondary focus:ring-0" id="seniorParentsCheck"  type="checkbox"/>
 <span className="">Senior Citizen Parents (Age &gt; 60) (Max ₹50,000 deduction)</span>
 </label>
 </div>
