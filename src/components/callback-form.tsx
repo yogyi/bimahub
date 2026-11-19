@@ -3,7 +3,7 @@
 import { useId, useState } from "react";
 import { COVER_OPTIONS, validateCallback, type CallbackErrors } from "@/lib/callback";
 import { CONTACT } from "@/lib/contact";
-import { submitLead } from "@/lib/submit-lead";
+import { submitLead, type LeadDelivery } from "@/lib/submit-lead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -42,6 +42,7 @@ export function CallbackForm({
   const [fields, setFields] = useState(empty);
   const [errors, setErrors] = useState<CallbackErrors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [delivery, setDelivery] = useState<LeadDelivery | undefined>();
 
   function update(key: keyof typeof empty, value: string) {
     setFields((current) => ({ ...current, [key]: value }));
@@ -74,11 +75,17 @@ export function CallbackForm({
       return;
     }
 
+    setDelivery(result.delivery);
     setStatus("sent");
     setFields(empty);
   }
 
   if (status === "sent") {
+    const sentCopy =
+      delivery === "mailto"
+        ? `Your mail app should open with a message to ${CONTACT.email}. Send it to finish the request. A BimaHub advisor calls on a weekday before 7 pm.`
+        : `Your note was sent to ${CONTACT.email}. A BimaHub advisor calls on a weekday before 7 pm.`;
+
     return (
       <div
         role="status"
@@ -92,11 +99,17 @@ export function CallbackForm({
             Quote request received
           </h3>
           <p className="mt-2 max-w-[48ch] leading-relaxed text-muted-foreground">
-            Your note was sent to {CONTACT.email}. A BimaHub advisor calls on a
-            weekday before 7 pm.
+            {sentCopy}
           </p>
         </div>
-        <Button type="button" className="w-fit" onClick={() => setStatus("idle")}>
+        <Button
+          type="button"
+          className="w-fit"
+          onClick={() => {
+            setDelivery(undefined);
+            setStatus("idle");
+          }}
+        >
           Send another request
         </Button>
       </div>
