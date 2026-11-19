@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CONTACT } from "@/lib/contact";
 
 const COLUMNS = [
   {
@@ -105,13 +106,17 @@ export function SiteFooter() {
               Reach us
             </p>
             <p className="mt-3 text-sm">
-              <a href="tel:+919876543210" className="font-semibold hover:underline">
-                +91 98765 43210
+              <a
+                href={`tel:${CONTACT.phoneTel}`}
+                className="font-semibold hover:underline"
+              >
+                {CONTACT.phoneDisplay}
               </a>
             </p>
+            <p className="mt-1 text-sm">{CONTACT.address}</p>
             <p className="mt-1 text-sm">
-              <a href="mailto:desk@bimahub.in" className="hover:underline">
-                desk@bimahub.in
+              <a href={CONTACT.emailHref} className="hover:underline">
+                {CONTACT.email}
               </a>
             </p>
           </div>
@@ -142,8 +147,8 @@ export function SiteFooter() {
           </p>
           <ul className="mt-5 flex max-w-5xl flex-col gap-3 text-xs leading-relaxed text-foam/60">
             <li>
-              Bima Hub is an insurance advisory preview desk in Andheri East,
-              Mumbai. Phone +91 98765 43210. Email desk@bimahub.in. Policies are
+              Bima Hub is an insurance advisory preview desk at {CONTACT.address}.
+              Phone {CONTACT.phoneDisplay}. Email {CONTACT.email}. Policies are
               issued by the insurer you choose.
             </li>
             <li>

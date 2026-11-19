@@ -22,22 +22,22 @@ export function DesignClaimsPage() {
 </div>
 
 <div className="flex flex-wrap sm:flex-nowrap items-stretch gap-space-sm w-full lg:w-auto">
-<a className="flex-1 sm:flex-initial flex items-center gap-space-sm bg-surface-container-lowest text-primary p-space-md rounded-xl shadow-sm hover:bg-surface-bright transition-all group" href="tel:18002088777">
+<a className="flex-1 sm:flex-initial flex items-center gap-space-sm bg-surface-container-lowest text-primary p-space-md rounded-xl shadow-sm hover:bg-surface-bright transition-all group" href="tel:+91999275826">
 <div className="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
 <span className="material-symbols-outlined text-[24px]" aria-hidden="true">call</span>
 </div>
 <div>
-<span className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Toll-Free 24x7</span>
-<span className="font-headline-sm text-headline-sm text-primary font-bold">1800-208-8777</span>
+<span className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Call desk</span>
+<span className="font-headline-sm text-headline-sm text-primary font-bold">+91 99927 5826</span>
 </div>
 </a>
-<a className="flex-1 sm:flex-initial flex items-center gap-space-sm bg-tertiary-container text-surface-bright p-space-md rounded-xl shadow-sm hover:bg-tertiary transition-all group" href="https://wa.me/919820012345" rel="noopener noreferrer" target="_blank">
+<a className="flex-1 sm:flex-initial flex items-center gap-space-sm bg-tertiary-container text-surface-bright p-space-md rounded-xl shadow-sm hover:bg-tertiary transition-all group" href="https://wa.me/91999275826" rel="noopener noreferrer" target="_blank">
 <div className="w-10 h-10 rounded-lg bg-on-tertiary-container/30 flex items-center justify-center text-tertiary-fixed group-hover:scale-110 transition-transform">
 <span className="material-symbols-outlined text-[24px]" aria-hidden="true">chat</span>
 </div>
 <div>
-<span className="block font-label-sm text-label-sm text-tertiary-fixed font-semibold uppercase tracking-wider">Instant WhatsApp Desk</span>
-<span className="font-headline-sm text-headline-sm text-surface-bright font-bold">+91 98200 12345</span>
+<span className="block font-label-sm text-label-sm text-tertiary-fixed font-semibold uppercase tracking-wider">WhatsApp</span>
+<span className="font-headline-sm text-headline-sm text-surface-bright font-bold">+91 99927 5826</span>
 </div>
 </a>
 <button className="w-full sm:w-auto flex items-center justify-center gap-space-xs bg-error hover:bg-on-error-container text-on-error px-space-lg py-space-md rounded-xl font-label-lg text-label-lg shadow-md transition-all active:scale-95" id="sosEmergencyBtn" type="button">
@@ -675,7 +675,7 @@ export function DesignClaimsPage() {
 </div>
 <div>
 <label className="block font-label-sm text-label-sm text-on-surface mb-1">Emergency Attendant Mobile No.</label>
-<input className="w-full px-3 py-2 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" id="sosPhone" placeholder="+91 98765 43210" required type="tel"/>
+<input className="w-full px-3 py-2 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" id="sosPhone" placeholder="+91 99927 5826" required type="tel"/>
 </div>
 <button className="w-full py-3 bg-error hover:bg-on-error-container text-on-error rounded-xl font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2 mt-4 shadow-md" type="submit">
 <span className="material-symbols-outlined text-[20px]" aria-hidden="true">send</span>
@@ -683,7 +683,7 @@ export function DesignClaimsPage() {
 </button>
 </form>
 <div className="text-center">
-<a className="text-secondary font-label-sm text-label-sm hover:underline" href="tel:18002088777">Or call Sovereign Emergency Boardroom: 1800-208-8777</a>
+<a className="text-secondary font-label-sm text-label-sm hover:underline" href="tel:+91999275826">Or call the desk: +91 99927 5826</a>
 </div>
 </div>
 </div>

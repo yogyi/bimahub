@@ -644,7 +644,7 @@ export function DesignLifePage() {
 </div>
 <div>
 <label className="block font-label-sm text-label-sm text-on-surface-variant font-bold mb-1">Mobile (OTP Verified)</label>
-<input className="w-full bg-surface-container-lowest text-on-surface px-3 py-2 rounded-lg text-body-sm font-body-sm outline-none focus:bg-surface-container-lowest" placeholder="+91 98765 43210" required type="tel"/>
+<input className="w-full bg-surface-container-lowest text-on-surface px-3 py-2 rounded-lg text-body-sm font-body-sm outline-none focus:bg-surface-container-lowest" placeholder="+91 99927 5826" required type="tel"/>
 </div>
 <div>
 <label className="block font-label-sm text-label-sm text-on-surface-variant font-bold mb-1">Consultation Mode</label>

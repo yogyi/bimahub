@@ -97,7 +97,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-1.5">
           <a
-            href="tel:+919876543210"
+            href="tel:+91999275826"
             className="mr-1 hidden items-center gap-1.5 text-sm font-medium text-foreground xl:inline-flex"
           >
             <Phone weight="fill" className="size-4 text-brand" />
@@ -155,11 +155,11 @@ export function SiteHeader() {
             ))}
           </nav>
           <a
-            href="tel:+919876543210"
+            href="tel:+91999275826"
             className="mt-auto inline-flex w-fit items-center gap-2 text-base font-medium"
           >
             <Phone weight="fill" className="size-5 text-brand" />
-            +91 98765 43210
+            +91 99927 5826
           </a>
         </div>
       </dialog>

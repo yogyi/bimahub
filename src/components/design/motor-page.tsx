@@ -619,7 +619,7 @@ export function DesignMotorPage() {
 <div className="flex flex-col sm:flex-row lg:flex-col gap-2 w-full lg:w-auto shrink-0">
 <div className="bg-primary-container rounded-lg p-3 text-left">
 <div className="font-label-sm text-label-sm text-outline-variant">Emergency SOS Dispatch</div>
-<div className="font-title-md text-title-md text-on-primary font-bold">1800-208-8777 (Press 1)</div>
+<div className="font-title-md text-title-md text-on-primary font-bold">+91 99927 5826</div>
 </div>
 <button className="bg-surface-container-lowest text-primary hover:bg-surface font-label-md text-label-md py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-1 font-bold">
 <span className="material-symbols-outlined text-[16px]" aria-hidden="true">download</span> Download Claim Protocol PDF

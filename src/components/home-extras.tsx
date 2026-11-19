@@ -223,7 +223,7 @@ export function PhoneSection() {
             ))}
           </ul>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="tel:+919876543210" className={buttonVariants()}>
+            <a href="tel:+91999275826" className={buttonVariants()}>
               Save desk number
             </a>
             <Link href="/contact" className={buttonVariants({ variant: "outline" })}>
@@ -316,7 +316,7 @@ export function SupportSection() {
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <a
-              href="mailto:desk@bimahub.in"
+              href="mailto:jangidmohit96@gmail.com"
               className="flex items-center gap-3 rounded-[16px] border border-border bg-card p-4 shadow-sm transition-shadow hover:shadow-md"
             >
               <span className="flex size-11 items-center justify-center rounded-[12px] bg-sky text-brand">
@@ -326,11 +326,13 @@ export function SupportSection() {
                 <span className="block text-xs text-muted-foreground">
                   General enquiries
                 </span>
-                <span className="text-sm font-bold text-foreground">desk@bimahub.in</span>
+                <span className="text-sm font-bold text-foreground">
+                  Jangidmohit96@gmail.com
+                </span>
               </span>
             </a>
             <a
-              href="tel:+919876543210"
+              href="tel:+91999275826"
               className="flex items-center gap-3 rounded-[16px] border border-border bg-card p-4 shadow-sm transition-shadow hover:shadow-md"
             >
               <span className="flex size-11 items-center justify-center rounded-[12px] bg-orange-50 text-primary dark:bg-orange-950/40">
@@ -340,7 +342,7 @@ export function SupportSection() {
                 <span className="block text-xs text-muted-foreground">
                   Customer sales
                 </span>
-                <span className="text-sm font-bold text-foreground">+91 98765 43210</span>
+                <span className="text-sm font-bold text-foreground">+91 99927 5826</span>
               </span>
             </a>
           </div>

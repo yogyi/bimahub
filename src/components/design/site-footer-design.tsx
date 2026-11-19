@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CONTACT } from "@/lib/contact";
 
 const COLUMNS = [
   {
@@ -64,15 +65,15 @@ export function SiteFooterDesign() {
             </p>
             <div className="space-y-1 rounded-xl border border-slate-700/60 bg-primary-container/90 p-3 text-[11px] text-slate-300">
               <p className="font-semibold text-tertiary-fixed">
-                Preview desk · Mumbai
+                Desk · {CONTACT.address}
               </p>
               <p>
-                <a className="hover:text-white" href="tel:18002088777">
-                  1800-208-8777
+                <a className="hover:text-white" href={`tel:${CONTACT.phoneTel}`}>
+                  {CONTACT.phoneDisplay}
                 </a>
                 {" · "}
-                <a className="hover:text-white" href="mailto:desk@bimahub.in">
-                  desk@bimahub.in
+                <a className="hover:text-white" href={CONTACT.emailHref}>
+                  {CONTACT.email}
                 </a>
               </p>
             </div>

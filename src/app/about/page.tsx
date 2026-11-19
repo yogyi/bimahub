@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CallbackBand } from "@/components/callback-band";
 import { Photo } from "@/components/photo";
+import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "About us",
@@ -34,8 +35,8 @@ export default function AboutPage() {
             <div className="mt-6 flex max-w-[62ch] flex-col gap-4 text-base leading-relaxed text-on-surface-variant">
               <p>
                 BimaHub compares life including LIC, health, motor, and shop or
-                home cover. The desk is in Mumbai. Clients in other cities work
-                with us by call and video.
+                home cover. The desk is at {CONTACT.address}. Clients in other
+                cities work with us by call and video.
               </p>
               <p>
                 Advisors come from claims and underwriting backgrounds. The
@@ -81,7 +82,8 @@ export default function AboutPage() {
               would leave alone. Nothing is proposed until you ask.
             </p>
             <p className="font-medium text-primary">
-              Mumbai desk · Weekdays by appointment · Helpline 1800-208-8777
+              {CONTACT.city} desk · {CONTACT.address} · {CONTACT.phoneDisplay} ·{" "}
+              {CONTACT.email}
             </p>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CallbackForm } from "@/components/callback-form";
+import { CONTACT } from "@/lib/contact";
 import { Clock, PhoneCall, SealCheck } from "@phosphor-icons/react/ssr";
 
 export const metadata: Metadata = {
@@ -66,9 +67,19 @@ export default function ContactPage() {
             ))}
           </div>
           <p className="mt-8 text-sm text-on-surface-variant">
-            Helpline{" "}
-            <a className="font-semibold text-primary" href="tel:18002088777">
-              1800-208-8777
+            Call{" "}
+            <a
+              className="font-semibold text-primary"
+              href={`tel:${CONTACT.phoneTel}`}
+            >
+              {CONTACT.phoneDisplay}
+            </a>
+            <span className="mt-1 block">{CONTACT.address}</span>
+            <a
+              className="font-semibold text-primary"
+              href={CONTACT.emailHref}
+            >
+              {CONTACT.email}
             </a>
           </p>
         </div>
