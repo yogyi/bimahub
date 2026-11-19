@@ -1,4 +1,6 @@
 /* Auto-adapted from stitch design HTML */
+import { LeadMiniForm } from "@/components/lead-mini-form";
+
 export function DesignLifePage() {
   return (
 <div className="design-page w-full bg-surface pt-28 pb-24 md:pb-28"><div className="pt-8"><div className="flex flex-col w-full">
@@ -637,27 +639,11 @@ export function DesignLifePage() {
 </div>
 
 <div className="lg:col-span-4 bg-surface-container p-space-lg rounded-xl">
-<form className="space-y-space-sm">
-<div>
-<label className="block font-label-sm text-label-sm text-on-surface-variant font-bold mb-1">Your Full Name</label>
-<input className="w-full bg-surface-container-lowest text-on-surface px-3 py-2 rounded-lg text-body-sm font-body-sm outline-none focus:bg-surface-container-lowest" placeholder="e.g. Vikramaditya Sen" required type="text"/>
-</div>
-<div>
-<label className="block font-label-sm text-label-sm text-on-surface-variant font-bold mb-1">Mobile (OTP Verified)</label>
-<input className="w-full bg-surface-container-lowest text-on-surface px-3 py-2 rounded-lg text-body-sm font-body-sm outline-none focus:bg-surface-container-lowest" placeholder="+91 99927 5826" required type="tel"/>
-</div>
-<div>
-<label className="block font-label-sm text-label-sm text-on-surface-variant font-bold mb-1">Consultation Mode</label>
-<select className="w-full bg-surface-container-lowest text-on-surface px-3 py-2 rounded-lg text-body-sm font-body-sm outline-none">
-<option value="doorstep">Doorstep Advisor Visit (Metro Cities)</option>
-<option value="zoom">Video Call with Senior Pension Actuary</option>
-<option value="phone">Quick 10-Minute Phone Consultation</option>
-</select>
-</div>
-<button className="w-full bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary py-2.5 px-4 rounded-lg font-label-lg text-label-lg font-bold shadow-md transition-colors mt-2" type="submit">
-            Confirm Free Consultation
-          </button>
-</form>
+<LeadMiniForm
+          cover="life"
+          notePrefix="LIC doorstep / portfolio audit request"
+          submitLabel="Confirm free consultation"
+        />
 <span className="text-[11px] text-outline block text-center mt-2">Bima Hub strictly adheres to IRDAI Non-Spam Policy.</span>
 </div>
 </div>

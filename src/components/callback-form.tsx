@@ -2,6 +2,8 @@
 
 import { useId, useState } from "react";
 import { COVER_OPTIONS, validateCallback, type CallbackErrors } from "@/lib/callback";
+import { CONTACT } from "@/lib/contact";
+import { submitLead } from "@/lib/submit-lead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -65,29 +67,15 @@ export function CallbackForm({
     setStatus("sending");
     setErrors({});
 
-    try {
-      const response = await fetch("/api/callback", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(value),
-      });
-      const payload = (await response.json().catch(() => null)) as {
-        ok?: boolean;
-        errors?: CallbackErrors;
-      } | null;
-
-      if (!response.ok || !payload?.ok) {
-        setErrors(payload?.errors ?? { form: "We could not save that note. Try again." });
-        setStatus("error");
-        return;
-      }
-
-      setStatus("sent");
-      setFields(empty);
-    } catch {
-      setErrors({ form: "The network dropped. Try again." });
+    const result = await submitLead(value);
+    if (!result.ok) {
+      setErrors(result.errors ?? { form: "We could not save that note. Try again." });
       setStatus("error");
+      return;
     }
+
+    setStatus("sent");
+    setFields(empty);
   }
 
   if (status === "sent") {
@@ -104,7 +92,7 @@ export function CallbackForm({
             Quote request received
           </h3>
           <p className="mt-2 max-w-[48ch] leading-relaxed text-muted-foreground">
-            Saved on this preview. On a live desk, a Bima Hub advisor calls on a
+            Your note was sent to {CONTACT.email}. A BimaHub advisor calls on a
             weekday before 7 pm.
           </p>
         </div>
@@ -270,7 +258,7 @@ export function CallbackForm({
         <ul className="flex flex-col gap-1.5 text-xs leading-relaxed text-muted-foreground sm:flex-row sm:flex-wrap sm:gap-x-4">
           <li>Weekday callback before 7 pm</li>
           <li>No spam calls</li>
-          <li>Preview stores on this server only</li>
+          <li>Sent to {CONTACT.email}</li>
         </ul>
       </div>
     </form>

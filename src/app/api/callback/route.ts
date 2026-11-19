@@ -1,6 +1,8 @@
 import { appendFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { validateCallback } from "@/lib/callback";
+import { CONTACT } from "@/lib/contact";
+import { sendLeadEmailWithResend } from "@/lib/send-lead-email";
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -33,21 +35,31 @@ export async function POST(request: Request) {
     return Response.json({ ok: false, errors }, { status: 400 });
   }
 
+  let emailed = false;
+  try {
+    emailed = await sendLeadEmailWithResend(value);
+  } catch {
+    emailed = false;
+  }
+
   try {
     const dir = path.join(process.cwd(), "data");
     await mkdir(dir, { recursive: true });
     const line =
-      JSON.stringify({ ...value, receivedAt: new Date().toISOString() }) + "\n";
+      JSON.stringify({
+        ...value,
+        receivedAt: new Date().toISOString(),
+        emailedTo: CONTACT.email,
+        emailed,
+      }) + "\n";
     await appendFile(path.join(dir, "callbacks.ndjson"), line, "utf8");
   } catch {
-    return Response.json(
-      {
-        ok: false,
-        errors: { form: "We could not save that note. Try again in a moment." },
-      },
-      { status: 500 },
-    );
+    // Serverless hosts often block local disk writes; email may still succeed.
   }
 
-  return Response.json({ ok: true });
+  return Response.json({
+    ok: true,
+    emailed,
+    emailedTo: CONTACT.email,
+  });
 }

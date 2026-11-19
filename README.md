@@ -24,4 +24,5 @@ Open [http://127.0.0.1:4317](http://127.0.0.1:4317).
 ## Notes
 
 - Underwriter logos in the design are shown as **example.com** placeholders until real partner marks are supplied.
-- Quote form posts to `/api/callback` and can fall back to a local preview response.
+- Quote / callback forms post to `/api/callback` and deliver to **Jangidmohit96@gmail.com** (browser FormSubmit, or Resend when configured). First FormSubmit delivery asks that inbox to confirm once.
+- Optional: set `RESEND_API_KEY` (and optionally `RESEND_FROM_EMAIL`) for silent server-side delivery.

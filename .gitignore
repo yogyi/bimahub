@@ -41,4 +41,4 @@ yarn-error.log*
 next-env.d.ts
 
 # callback preview inbox
-/data/*.ndjson
+/data/
